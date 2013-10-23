@@ -1,4 +1,9 @@
 #!/bin/bash
 
+if [ ! -d "$HOME/.tmp" ]; then
+  mkdir ~/.tmp
+fi
+
 stow bash
 stow git
+stow vim
