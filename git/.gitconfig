@@ -6,3 +6,5 @@
 	excludesfile=~/.global_gitignore
 [color]
 	ui = auto
+[push]
+	default = simple
