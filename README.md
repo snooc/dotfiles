@@ -5,7 +5,7 @@ Installation
 --------------------------------------------------------------------------------
 1. Clone repository into `~/.dotfiles`
 2. Install GNU Stow `brew install stow`
-2. Run install script `bin/install`
+2. Run install script `./bin/install`
 
 About
 --------------------------------------------------------------------------------
