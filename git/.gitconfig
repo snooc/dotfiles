@@ -1,0 +1,8 @@
+[user]
+	name=Cody Coons
+	email=cody@codycoons.com
+
+[core]
+	excludesfile=~/.global_gitignore
+[color]
+	ui = auto
