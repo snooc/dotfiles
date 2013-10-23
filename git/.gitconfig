@@ -6,6 +6,6 @@
 	excludesfile=~/.global_gitignore
 	editor = vim
 [color]
-	ui = auto
+	ui = true
 [push]
 	default = simple
