@@ -12,3 +12,10 @@ alias gm="git merge"
 alias gr="git rebase"
 alias glg="git lg"
 alias gl="git ls-files"
+
+# Quick editing files
+alias evim="vim ~/.vimrc"
+alias ebash="vim ~/.bash_profile"
+alias ebalias="vim ~/.bash/aliases.sh"
+alias ebfunctions="vim ~/.bash/functions.sh"
+alias ebpath="vim ~/.bash/path.sh"

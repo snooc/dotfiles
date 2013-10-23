@@ -7,6 +7,7 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 Bundle 'chriskempson/base16-vim'
+Bundle 'kien/ctrlp.vim'
 
 filetype indent plugin on
 
@@ -16,6 +17,7 @@ if &t_Co > 2 || has("gui_running")
   set hlsearch
 endif
 
+set autochdir
 set backspace=indent,eol,start
 set history=500
 set ruler
@@ -49,6 +51,12 @@ set so=14
 set previewheight=10
 set list listchars=tab:⇥⇥,trail:·
 
+" NetRW
+let g:netrw_liststyle=3 " Use tree-mode
+let g:netrw_browse_split=4 " Open in previous buffer
+let g:netrw_preview=1 " Preview in vertical split
+let g:netrw_winsize=20
+
 " Colors
 colorscheme base16-railscasts
 set background=dark
@@ -58,7 +66,7 @@ autocmd BufNewFile,BufRead *.json set ft=javascript
 autocmd BufNew,BufRead Podfile set ft=ruby
 
 " Ignore some files
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,.Trash,.Trash,.DS_STORE
 
 " Status line
 " set statusline=%F%m%r%h%w\
@@ -78,6 +86,32 @@ autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
+
+" Toggleable Vexplore
+function! ToggleVExplorer()
+  if exists("t:expl_buf_num")
+    let expl_win_num = bufwinnr(t:expl_buf_num)
+    if expl_win_num != -1
+      let cur_win_nr = winnr()
+      exec expl_win_num . 'wincmd w'
+      close
+      exec cur_win_nr . 'wincmd w'
+      unlet t:expl_buf_num
+    else
+      unlet t:expl_buf_num
+    endif
+  else
+    exec '1wincmd w'
+    Vexplore
+    let t:expl_buf_num = bufnr("%")
+  endif
+endfunction
+
+" Custom Mappings and Aliases
+let mapleader=","
+
+map <leader>ve :call ToggleVExplorer()<cr>
+map <leader>p :CtrlP<cr>
 
 " Mouse
 if has("mouse")
