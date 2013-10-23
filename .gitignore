@@ -1,1 +1,3 @@
-# GIT likes everyone at the moment...
+# Vim Bundles
+vim/.vim/bundle
+!vim/.vim/bundle/vundle
