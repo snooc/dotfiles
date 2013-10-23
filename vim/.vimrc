@@ -2,14 +2,15 @@ set nocompatible
 filetype off
 
 " Vundle muh Bundle
-set rtp=~/.vim/bundle/vundle
+set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
+Bundle 'chriskempson/base16-vim'
+
+filetype indent plugin on
 
 " Settings
-filetype plugin indent on
-
 if &t_Co > 2 || has("gui_running")
   syntax on
   set hlsearch
@@ -45,8 +46,12 @@ set nuw=5
 set colorcolumn=80
 set encoding=utf8
 set so=14
-set previewheight=20
+set previewheight=10
 set list listchars=tab:⇥⇥,trail:·
+
+" Colors
+colorscheme base16-railscasts
+set background=dark
 
 " Free JSON highlighting
 autocmd BufNewFile,BufRead *.json set ft=javascript
