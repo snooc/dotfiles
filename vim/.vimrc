@@ -58,6 +58,7 @@ let g:netrw_preview=1 " Preview in vertical split
 let g:netrw_winsize=20
 
 " Colors
+let base16colorspace=256
 colorscheme base16-railscasts
 set background=dark
 

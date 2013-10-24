@@ -1,3 +1,6 @@
+# Setup 256 colors
+source ~/.bash/lib/base16-railscasts.dark.sh
+
 # chruby
 source /usr/local/opt/chruby/share/chruby/chruby.sh
 source /usr/local/opt/chruby/share/chruby/auto.sh
