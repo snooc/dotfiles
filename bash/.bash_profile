@@ -1,5 +1,14 @@
+# chruby
+source /usr/local/opt/chruby/share/chruby/chruby.sh
+source /usr/local/opt/chruby/share/chruby/auto.sh
+
+# default ruby version
+chruby ruby
+
+# bash git completion
 source ~/.bash/lib/git-prompt.sh
 
+# customizations
 source ~/.bash/path.sh
 source ~/.bash/colors.sh
 source ~/.bash/aliases.sh
