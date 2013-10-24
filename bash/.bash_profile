@@ -14,5 +14,6 @@ source ~/.bash/lib/git-prompt.sh
 # customizations
 source ~/.bash/path.sh
 source ~/.bash/colors.sh
+source ~/.bash/functions.sh
 source ~/.bash/aliases.sh
 source ~/.bash/prompt.sh
