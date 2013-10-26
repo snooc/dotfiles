@@ -1,5 +1,6 @@
 # Pretty `ls`
 alias ls="ls -GF"
+alias lsa="ls -laGF"
 
 # Git
 alias g="git"
@@ -19,3 +20,6 @@ alias ebash="vim ~/.bash_profile"
 alias ebalias="vim ~/.bash/aliases.sh"
 alias ebfunctions="vim ~/.bash/functions.sh"
 alias ebpath="vim ~/.bash/path.sh"
+
+# Quick cd's
+alias cdd="cd ~/.dotfiles"
