@@ -1,0 +1,14 @@
+# Enable autocomplete
+"\e[B": history-search-forward
+"\e[A": history-search-backward
+
+# Ignore case when autocompleteing file/dir names
+set show-all-if-ambiguous on
+set completion-ignore-case on
+
+# Moved to to begining and end of line using F1/F2
+"\eOP": beginning-of-line
+"\eOQ": end-of-line
+
+# Kill a whole line w/ F3
+"\eOR": kill-whole-line
