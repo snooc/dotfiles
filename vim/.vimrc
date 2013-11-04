@@ -53,9 +53,9 @@ set list listchars=tab:⇥⇥,trail:·
 
 " NetRW
 let g:netrw_liststyle=3 " Use tree-mode
-let g:netrw_browse_split=4 " Open in previous buffer
-let g:netrw_preview=1 " Preview in vertical split
-let g:netrw_winsize=20
+"let g:netrw_browse_split=4 " Open in previous buffer
+"let g:netrw_preview=1 " Preview in vertical split
+"let g:netrw_winsize=20
 
 " Colors
 let base16colorspace=256
@@ -89,24 +89,24 @@ autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
 " Toggleable Vexplore
-function! ToggleVExplorer()
-  if exists("t:expl_buf_num")
-    let expl_win_num = bufwinnr(t:expl_buf_num)
-    if expl_win_num != -1
-      let cur_win_nr = winnr()
-      exec expl_win_num . 'wincmd w'
-      close
-      exec cur_win_nr . 'wincmd w'
-      unlet t:expl_buf_num
-    else
-      unlet t:expl_buf_num
-    endif
-  else
-    exec '1wincmd w'
-    Vexplore
-    let t:expl_buf_num = bufnr("%")
-  endif
-endfunction
+" function! ToggleVExplorer()
+"   if exists("t:expl_buf_num")
+"     let expl_win_num = bufwinnr(t:expl_buf_num)
+"     if expl_win_num != -1
+"       let cur_win_nr = winnr()
+"       exec expl_win_num . 'wincmd w'
+"       close
+"       exec cur_win_nr . 'wincmd w'
+"       unlet t:expl_buf_num
+"     else
+"       unlet t:expl_buf_num
+"     endif
+"   else
+"     exec '1wincmd w'
+"     Vexplore
+"     let t:expl_buf_num = bufnr("%")
+"   endif
+" endfunction
 
 " Custom Mappings and Aliases
 let mapleader=","

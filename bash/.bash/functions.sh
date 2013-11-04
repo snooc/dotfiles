@@ -4,6 +4,12 @@ ows() {
   open $WS
 }
 
+# Open first .xcproject file found in folder
+op() {
+  P=$(find . -name *.xcodeproj | head -1)
+  open $P
+}
+
 # `cd` into ~/Code with completion
 c() {
   cd ~/Code/$1
