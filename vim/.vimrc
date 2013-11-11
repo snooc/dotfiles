@@ -8,6 +8,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'chriskempson/base16-vim'
 Bundle 'kien/ctrlp.vim'
+Bundle 'othree/javascript-libraries-syntax.vim'
 
 filetype indent plugin on
 
@@ -61,6 +62,9 @@ let g:netrw_liststyle=3 " Use tree-mode
 let base16colorspace=256
 colorscheme base16-railscasts
 set background=dark
+
+" Extra Syntax Higlighting for JS libs
+let g:used_javascript_libs = 'angularjs,jquery'
 
 " Free JSON highlighting
 autocmd BufNewFile,BufRead *.json set ft=javascript
