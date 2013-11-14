@@ -18,3 +18,6 @@ source ~/.bash/colors.sh
 source ~/.bash/functions.sh
 source ~/.bash/aliases.sh
 source ~/.bash/prompt.sh
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"

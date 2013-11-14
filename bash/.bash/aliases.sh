@@ -23,3 +23,6 @@ alias ebpath="vim ~/.bash/path.sh"
 
 # Quick cd's
 alias cdd="cd ~/.dotfiles"
+
+# Put XCode on a diet!
+alias xcdiet="rm -rf ~/Library/Developer/Xcode/DerivedData/"

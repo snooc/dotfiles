@@ -10,6 +10,7 @@ Dependencies
   - ruby-install
   - vim 7.4
   - git
+  - reattach-to-user-namespace
 
 Installation
 --------------------------------------------------------------------------------

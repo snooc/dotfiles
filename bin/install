@@ -7,4 +7,6 @@ fi
 stow bash
 stow git
 stow vim
+stow tmux
 stow rubygems
+stow xcode
