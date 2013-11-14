@@ -9,4 +9,5 @@ stow git
 stow vim
 stow tmux
 stow rubygems
+stow lldb
 stow xcode
