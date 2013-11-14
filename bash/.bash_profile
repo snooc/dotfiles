@@ -1,5 +1,5 @@
 # Setup 256 colors
-source ~/.bash/lib/base16-railscasts.dark.sh
+source ~/.bash/lib/base16-ocean.dark.sh
 
 # chruby
 source /usr/local/opt/chruby/share/chruby/chruby.sh

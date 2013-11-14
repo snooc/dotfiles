@@ -10,17 +10,24 @@ set gdefault
 " Use the system pasteboard
 set clipboard=unnamed
 
+" Set Leader
+let mapleader=","
+
 " Map <space>b to toggle a breakpoint at the current line
-nnoremap <space>b :xccmd toggleBreakpointAtCurrentLine<CR>
+nnoremap <space>b :xccmd toggleBreakpointAtCurrentLine<cr>
+map <leader>b :xccmd toggleBreakpointAtCurrentLine<cr>
 
 " Use <space>cm to toggle comments for the selection
-nnoremap <space>cm :xccmd commentAndUncommentCurrentLines<CR>
+nnoremap <space>cm :xccmd commentAndUncommentCurrentLines<cr>
+map <leader>cm :xccmd commentAndUncommentcurrentLines<cr>
 
 " Edit in scope
-nnoremap <space>e :xccmd toggleTokenizedEditing<CR>
+nnoremap <space>e :xccmd toggleTokenizedEditing<cr>
+map <leader>e :xccmd toggleTokenizedEditing<cr>
 
 " Map openQuickly to control p to mimic ctrl-p in vim
-nnoremap <C-p> :xccmd openQuickly<CR>
+nnoremap <C-p> :xccmd openQuickly<cr>
+map <leader>p :xccmd openQuickley<cr>
 
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
