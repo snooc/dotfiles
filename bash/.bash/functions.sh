@@ -22,3 +22,12 @@ _c() {
   COMPREPLY=($(compgen -W "${opts}" -- ${cur}))
 }
 complete -F _c c
+
+# Go projects
+gnp() {
+  mkdir src/github.com/$1
+}
+
+gvim() {
+  vim src/github.com/$1
+}
