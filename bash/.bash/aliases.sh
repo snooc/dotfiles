@@ -20,6 +20,7 @@ alias ebash="vim ~/.bash_profile"
 alias ebalias="vim ~/.bash/aliases.sh"
 alias ebfunctions="vim ~/.bash/functions.sh"
 alias ebpath="vim ~/.bash/path.sh"
+alias edot="vim ~/.dotfiles"
 
 # Quick cd's
 alias cdd="cd ~/.dotfiles"

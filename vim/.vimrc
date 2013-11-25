@@ -16,6 +16,9 @@ Bundle 'tomtom/tlib_vim'
 Bundle 'garbas/vim-snipmate'
 Bundle 'honza/vim-snippets'
 
+" GO syntax support
+set rtp+=$HOMEBREW_GO_PATH/libexec/misc/vim
+
 filetype indent plugin on
 
 " Settings
