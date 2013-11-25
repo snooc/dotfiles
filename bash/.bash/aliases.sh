@@ -26,3 +26,6 @@ alias cdd="cd ~/.dotfiles"
 
 # Put XCode on a diet!
 alias xcdiet="rm -rf ~/Library/Developer/Xcode/DerivedData/"
+
+# GO!
+alias cgo="cd $GOPATH"
