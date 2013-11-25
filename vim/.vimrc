@@ -9,6 +9,12 @@ Bundle 'gmarik/vundle'
 Bundle 'chriskempson/base16-vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'othree/javascript-libraries-syntax.vim'
+Bundle 'derekwyatt/vim-scala'
+Bundle 'ervandew/supertab'
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'tomtom/tlib_vim'
+Bundle 'garbas/vim-snipmate'
+Bundle 'honza/vim-snippets'
 
 filetype indent plugin on
 
@@ -68,7 +74,10 @@ let g:used_javascript_libs = 'angularjs,jquery'
 
 " Free JSON highlighting
 autocmd BufNewFile,BufRead *.json set ft=javascript
+" Free Podfile highlighting
 autocmd BufNew,BufRead Podfile set ft=ruby
+" Free Vagrantfile hightlighting
+autocmd BufNew,BufRead Vagrantfile set ft=ruby
 
 " Ignore some files
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,.Trash,.Trash,.DS_STORE

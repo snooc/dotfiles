@@ -8,6 +8,11 @@ source /usr/local/opt/chruby/share/chruby/auto.sh
 # default ruby version
 chruby ruby
 
+# Homebrew Bash Completion
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+  . `brew --prefix`/etc/bash_completion
+fi
+
 # bash git completion
 source ~/.bash/lib/git-prompt.sh
 
