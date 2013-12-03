@@ -7,6 +7,7 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 Bundle 'chriskempson/base16-vim'
+Bundle 'scrooloose/nerdtree'
 Bundle 'kien/ctrlp.vim'
 Bundle 'othree/javascript-libraries-syntax.vim'
 Bundle 'derekwyatt/vim-scala'
@@ -15,6 +16,7 @@ Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
 Bundle 'garbas/vim-snipmate'
 Bundle 'honza/vim-snippets'
+Bundle 'othree/html5.vim'
 
 " GO syntax support
 set rtp+=$HOMEBREW_GO_PATH/libexec/misc/vim
@@ -127,8 +129,11 @@ autocmd BufWinLeave * call clearmatches()
 " Custom Mappings and Aliases
 let mapleader=","
 
-map <leader>ve :call ToggleVExplorer()<cr>
 map <leader>p :CtrlP<cr>
+map <leader>nt :NERDTreeToggle<cr>
+
+" Close NERDTREE if it is last man standing
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " Mouse
 if has("mouse")
