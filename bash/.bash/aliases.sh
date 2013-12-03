@@ -2,6 +2,9 @@
 alias ls="ls -GF"
 alias lsa="ls -laGF"
 
+# Promote bad behaviod
+alias cd..="cd .."
+
 # Git
 alias g="git"
 alias gs="git status"
@@ -30,3 +33,6 @@ alias xcdiet="rm -rf ~/Library/Developer/Xcode/DerivedData/"
 
 # GO!
 alias cgo="cd $GOPATH"
+
+# Heroku
+alias h="heroku"
