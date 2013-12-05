@@ -17,6 +17,8 @@ Bundle 'tomtom/tlib_vim'
 Bundle 'garbas/vim-snipmate'
 Bundle 'honza/vim-snippets'
 Bundle 'othree/html5.vim'
+Bundle 'mattn/emmet-vim'
+Bundle 'christoomey/vim-tmux-navigator'
 
 " GO syntax support
 set rtp+=$HOMEBREW_GO_PATH/libexec/misc/vim
@@ -62,6 +64,9 @@ set encoding=utf8
 set so=14
 set previewheight=10
 set list listchars=tab:⇥⇥,trail:·
+
+" Emmet
+let g:user_emmet_leader_key = '<c-e>'
 
 " NetRW
 let g:netrw_liststyle=3 " Use tree-mode

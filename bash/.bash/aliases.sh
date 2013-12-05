@@ -5,6 +5,17 @@ alias lsa="ls -laGF"
 # Promote bad behaviod
 alias cd..="cd .."
 
+# Quick Clear
+alias cl="clear"
+
+# Downloads
+alias cdow="cd ~/Downloads"
+
+# Postgres
+alias pgstart="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
+alias pgstop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
+alias pgstatus="pg_ctl -D /usr/local/var/postgres status"
+
 # Git
 alias g="git"
 alias gs="git status"
