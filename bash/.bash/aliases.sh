@@ -11,10 +11,21 @@ alias cl="clear"
 # Downloads
 alias cdow="cd ~/Downloads"
 
+# Rails
+alias r="rails"
+alias rg="rails generate"
+
+# Bundler
+alias bi="bundle install"
+
 # Postgres
 alias pgstart="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
 alias pgstop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
 alias pgstatus="pg_ctl -D /usr/local/var/postgres status"
+
+# Redit
+alias redisstart="redis-server /usr/local/etc/redis.conf"
+alias redisstop="redis-server stop"
 
 # Git
 alias g="git"
@@ -44,6 +55,7 @@ alias xcdiet="rm -rf ~/Library/Developer/Xcode/DerivedData/"
 
 # GO!
 alias cgo="cd $GOPATH"
+alias cgos="cd $GOPATH/src"
 
 # Heroku
 alias h="heroku"

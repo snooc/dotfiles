@@ -5,6 +5,7 @@ if [ ! -d "$HOME/.tmp" ]; then
 fi
 
 stow bash
+stow zsh
 stow git
 stow vim
 stow tmux

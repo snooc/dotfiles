@@ -19,11 +19,19 @@ Bundle 'honza/vim-snippets'
 Bundle 'othree/html5.vim'
 Bundle 'mattn/emmet-vim'
 Bundle 'christoomey/vim-tmux-navigator'
+Bundle 'elixir-lang/vim-elixir'
+Bundle 'jnurmine/Zenburn'
 
 " GO syntax support
 set rtp+=$HOMEBREW_GO_PATH/libexec/misc/vim
 
 filetype indent plugin on
+
+augroup myfiletypes
+  autocmd!
+  autocmd FileType ruby,eruby,yaml,html,javascript setlocal ai sw=2 sts=2 et
+  autocmd FileType ruby,eruby,yaml setlocal path+=lib
+augroup END
 
 " Settings
 if &t_Co > 2 || has("gui_running")
@@ -45,10 +53,8 @@ set guioptions-=T
 set autoindent
 set smartindent
 set smarttab
-set shiftwidth=2
-set softtabstop=2
-set tabstop=2
-set expandtab
+set tabstop=4
+set shiftwidth=4
 set noincsearch
 set ignorecase smartcase
 set laststatus=2
@@ -63,7 +69,8 @@ set colorcolumn=80
 set encoding=utf8
 set so=14
 set previewheight=10
-set list listchars=tab:⇥⇥,trail:·
+" set list listchars=tab:⇥⇥,trail:·
+set list listchars=tab:»·,trail:·
 
 " Emmet
 let g:user_emmet_leader_key = '<c-e>'
@@ -75,8 +82,8 @@ let g:netrw_liststyle=3 " Use tree-mode
 "let g:netrw_winsize=20
 
 " Colors
-let base16colorspace=256
-colorscheme base16-railscasts
+" let base16colorspace=256
+colorscheme zenburn
 set background=dark
 
 " Extra Syntax Higlighting for JS libs
