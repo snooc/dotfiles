@@ -15,10 +15,7 @@ autoload -U promptinit
 promptinit
 
 # Set prompt
-prompt adam1
-
-# Homebrew completions
-fpath=(/usr/local/share/zsh-completions $fpath)
+prompt off
 
 # chruby from homebrew
 if [[ -f "/usr/local/opt/chruby/share/chruby/chruby.sh" ]]; then
@@ -34,5 +31,6 @@ source $HOME/.zsh/aliases.zsh
 source $HOME/.zsh/functions.zsh
 source $HOME/.zsh/completions.zsh
 
-# The Almighty PATH
-PATH="$PATH:/usr/local/bin:./bin"
+# The Almighty PATH(s)
+export GOPATH="$HOME/Code/goworkspace"
+export PATH="$PATH:/usr/local/bin:./bin"

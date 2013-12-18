@@ -6,7 +6,6 @@ set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
-Bundle 'chriskempson/base16-vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'kien/ctrlp.vim'
 Bundle 'othree/javascript-libraries-syntax.vim'
@@ -20,10 +19,8 @@ Bundle 'othree/html5.vim'
 Bundle 'mattn/emmet-vim'
 Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'elixir-lang/vim-elixir'
-Bundle 'jnurmine/Zenburn'
-
-" GO syntax support
-set rtp+=$HOMEBREW_GO_PATH/libexec/misc/vim
+Bundle 'chriskempson/base16-vim'
+Bundle 'jnwhiteh/vim-golang'
 
 filetype indent plugin on
 
@@ -69,7 +66,6 @@ set colorcolumn=80
 set encoding=utf8
 set so=14
 set previewheight=10
-" set list listchars=tab:⇥⇥,trail:·
 set list listchars=tab:»·,trail:·
 
 " Emmet
@@ -82,8 +78,7 @@ let g:netrw_liststyle=3 " Use tree-mode
 "let g:netrw_winsize=20
 
 " Colors
-" let base16colorspace=256
-colorscheme zenburn
+colorscheme base16-railscasts
 set background=dark
 
 " Extra Syntax Higlighting for JS libs
@@ -95,9 +90,12 @@ autocmd BufNewFile,BufRead *.json set ft=javascript
 autocmd BufNew,BufRead Podfile set ft=ruby
 " Free Vagrantfile hightlighting
 autocmd BufNew,BufRead Vagrantfile set ft=ruby
+" Free Gemfile hightlighting
+autocmd BufNew,BufRead Gemfile set ft=ruby
 
 " Ignore some files
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,.Trash,.Trash,.DS_STORE
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,.Trash,.Trash,.DS_STORE,config.codekit
+let NERDTreeIgnore=['config.codekit']
 
 " Status line
 " set statusline=%F%m%r%h%w\
@@ -117,26 +115,6 @@ autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
-
-" Toggleable Vexplore
-" function! ToggleVExplorer()
-"   if exists("t:expl_buf_num")
-"     let expl_win_num = bufwinnr(t:expl_buf_num)
-"     if expl_win_num != -1
-"       let cur_win_nr = winnr()
-"       exec expl_win_num . 'wincmd w'
-"       close
-"       exec cur_win_nr . 'wincmd w'
-"       unlet t:expl_buf_num
-"     else
-"       unlet t:expl_buf_num
-"     endif
-"   else
-"     exec '1wincmd w'
-"     Vexplore
-"     let t:expl_buf_num = bufnr("%")
-"   endif
-" endfunction
 
 " Custom Mappings and Aliases
 let mapleader=","
