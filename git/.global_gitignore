@@ -13,3 +13,6 @@ Icon
 Session.vim
 .netrwhist
 *~
+
+# Sublime
+.sublime*

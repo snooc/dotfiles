@@ -16,6 +16,10 @@ alias p="pwd"
 alias cd.="cd .."
 alias cd..="cd .."
 alias cd...="cd .."
+alias tr="tree -I 'node_modules'"
+
+# Downloads folder
+alias cdo="cd ~/Downloads"
 
 # Directory Stack
 alias d="dirs -v"
@@ -39,8 +43,35 @@ alias rd="rails destroy"
 alias rs="rails server"
 alias rdc="rake db:create"
 alias rdm="rake db:migrate"
-alias rflip="rake db:drop && rake db:create && rake db:migrate"
+alias rflip="echo '* Dropping Database\n' && rake db:drop && echo '* Creating Database\n' && rake db:create && echo '* Executing Migrations\n' && rake db:migrate"
+
+# Tmux
+alias t="tmux"
+alias tl="tmux list-sessions"
+alias tls="tmux list-sessions"
+alias ta="tmux attach -t"
+alias ts="tmux switch -t"
+alias tn="tmux new -s"
+alias td="tmux detach"
 
 # Go
 alias cgo="cd ~/Code/goworkspace"
 alias cgs="cd ~/Code/goworkspace/src"
+
+# Vim
+alias v="vim"
+alias vupdate="vim +BundleUpdate +qall"
+alias vinstall="vim +BundleInstall +qall"
+
+# Quick edits
+alias evim="vim ~/.vimrc"
+alias ezsh="vim ~/.zshrc"
+alias ezshd="vim ~/.zsh"
+alias etmux="vim ~/.tmux.conf"
+
+# CURL
+alias cu="curl -sSNL"
+
+# Node
+alias n="node"
+alias nh="node --harmony"

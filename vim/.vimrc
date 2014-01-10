@@ -6,27 +6,38 @@ set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
-Bundle 'scrooloose/nerdtree'
-Bundle 'kien/ctrlp.vim'
-Bundle 'othree/javascript-libraries-syntax.vim'
-Bundle 'derekwyatt/vim-scala'
-Bundle 'ervandew/supertab'
+
 Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'tomtom/tlib_vim'
+Bundle 'chriskempson/base16-vim'
+Bundle 'christoomey/vim-tmux-navigator'
+Bundle 'derekwyatt/vim-scala'
+Bundle 'elixir-lang/vim-elixir'
+Bundle 'ervandew/supertab'
 Bundle 'garbas/vim-snipmate'
 Bundle 'honza/vim-snippets'
-Bundle 'othree/html5.vim'
-Bundle 'mattn/emmet-vim'
-Bundle 'christoomey/vim-tmux-navigator'
-Bundle 'elixir-lang/vim-elixir'
-Bundle 'chriskempson/base16-vim'
+Bundle 'jelera/vim-javascript-syntax'
 Bundle 'jnwhiteh/vim-golang'
+Bundle 'kien/ctrlp.vim'
+Bundle 'mattn/emmet-vim'
+Bundle 'mustache/vim-mustache-handlebars'
+Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'othree/html5.vim'
+Bundle 'othree/javascript-libraries-syntax.vim'
+Bundle 'pangloss/vim-javascript'
+Bundle 'tomtom/tlib_vim'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-obsession'
+Bundle 'tpope/vim-vinegar'
 
 filetype indent plugin on
 
+set wildignore+=*.o,*.obj,*DS_Store*,tmp/*,*/log/*,.git/*,node_modules/*
+
+let g:ctrlp_custom_ignore = 'node_modules'
+
 augroup myfiletypes
   autocmd!
-  autocmd FileType ruby,eruby,yaml,html,javascript setlocal ai sw=2 sts=2 et
+  autocmd FileType ruby,eruby,yaml,html,javascript,scss,css setlocal ai sw=2 sts=2 et
   autocmd FileType ruby,eruby,yaml setlocal path+=lib
 augroup END
 
@@ -72,13 +83,13 @@ set list listchars=tab:»·,trail:·
 let g:user_emmet_leader_key = '<c-e>'
 
 " NetRW
-let g:netrw_liststyle=3 " Use tree-mode
-"let g:netrw_browse_split=4 " Open in previous buffer
-"let g:netrw_preview=1 " Preview in vertical split
-"let g:netrw_winsize=20
+" let g:netrw_liststyle=3 " Use tree-mode
+" let g:netrw_browse_split=4 " Open in previous buffer
+" let g:netrw_preview=1 " Preview in vertical split
+" let g:netrw_winsize=20
 
 " Colors
-colorscheme base16-railscasts
+colorscheme base16-eighties
 set background=dark
 
 " Extra Syntax Higlighting for JS libs
@@ -93,15 +104,12 @@ autocmd BufNew,BufRead Vagrantfile set ft=ruby
 " Free Gemfile hightlighting
 autocmd BufNew,BufRead Gemfile set ft=ruby
 
-" Ignore some files
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,.Trash,.Trash,.DS_STORE,config.codekit
-let NERDTreeIgnore=['config.codekit']
 
 " Status line
-" set statusline=%F%m%r%h%w\
-" set statusline+=%{fugitive#statusline()}
-" set statusline+=[%{strlen(&fenc)?&fenc:&enc}]
-" set statusline+=\ [line\ %l\/%L]
+set statusline=%F%m%r%h%w\
+set statusline+=%{fugitive#statusline()}
+set statusline+=[%{strlen(&fenc)?&fenc:&enc}]
+set statusline+=\ [line\ %l\/%L]
 
 " Catch :W when it's supposed to be :w
 cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))
@@ -120,10 +128,6 @@ autocmd BufWinLeave * call clearmatches()
 let mapleader=","
 
 map <leader>p :CtrlP<cr>
-map <leader>nt :NERDTreeToggle<cr>
-
-" Close NERDTREE if it is last man standing
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " Mouse
 if has("mouse")

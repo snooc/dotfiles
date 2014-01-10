@@ -12,3 +12,4 @@ stow tmux
 stow rubygems
 stow lldb
 stow xcode
+stow curl

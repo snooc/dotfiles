@@ -10,6 +10,10 @@ bindkey -v
 autoload -Uz compinit
 compinit
 
+# Load colors
+autoload -U colors
+colors
+
 # Load prompt
 autoload -U promptinit
 promptinit
@@ -25,12 +29,20 @@ if [[ -f "/usr/local/opt/chruby/share/chruby/chruby.sh" ]]; then
 	chruby ruby
 fi
 
+[ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh # This loads NVM
+
 # Load extras
 source $HOME/.zsh/config.zsh
 source $HOME/.zsh/aliases.zsh
 source $HOME/.zsh/functions.zsh
 source $HOME/.zsh/completions.zsh
+source $HOME/.zsh/prompt.zsh
 
 # The Almighty PATH(s)
 export GOPATH="$HOME/Code/goworkspace"
-export PATH="$PATH:/usr/local/bin:./bin"
+export PATH="/usr/local/bin:$PATH:./bin"
+
+# DIRENV
+if which direnv >/dev/null; then
+	eval "$(direnv hook $0)"
+fi
