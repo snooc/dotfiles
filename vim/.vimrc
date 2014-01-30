@@ -11,6 +11,7 @@ Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'chriskempson/base16-vim'
 Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'derekwyatt/vim-scala'
+Bundle 'ekalinin/Dockerfile.vim'
 Bundle 'elixir-lang/vim-elixir'
 Bundle 'ervandew/supertab'
 Bundle 'garbas/vim-snipmate'
@@ -24,6 +25,7 @@ Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'othree/html5.vim'
 Bundle 'othree/javascript-libraries-syntax.vim'
 Bundle 'pangloss/vim-javascript'
+Bundle 'puppetlabs/puppet-syntax-vim'
 Bundle 'tomtom/tlib_vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-obsession'
@@ -31,14 +33,15 @@ Bundle 'tpope/vim-vinegar'
 
 filetype indent plugin on
 
-set wildignore+=*.o,*.obj,*DS_Store*,tmp/*,*/log/*,.git/*,node_modules/*
+set wildignore+=*.o,*.obj,*DS_Store*,tmp/*,*/log/*,.git/*,node_modules/*,.vagrant/*,.tmp/*,.librarian/*,.git*,.ruby-version,*.lock,.bundle/*
 
 let g:ctrlp_custom_ignore = 'node_modules'
 
 augroup myfiletypes
   autocmd!
-  autocmd FileType ruby,eruby,yaml,html,javascript,scss,css setlocal ai sw=2 sts=2 et
+  autocmd FileType ruby,eruby,yaml,html,javascript,scss,css,puppet setlocal ai sw=2 sts=2 et
   autocmd FileType ruby,eruby,yaml setlocal path+=lib
+  autocmd FileType php setlocal ai sw=4 sts=4 et
 augroup END
 
 " Settings
@@ -89,7 +92,7 @@ let g:user_emmet_leader_key = '<c-e>'
 " let g:netrw_winsize=20
 
 " Colors
-colorscheme base16-eighties
+colorscheme base16-ocean
 set background=dark
 
 " Extra Syntax Higlighting for JS libs
@@ -103,6 +106,8 @@ autocmd BufNew,BufRead Podfile set ft=ruby
 autocmd BufNew,BufRead Vagrantfile set ft=ruby
 " Free Gemfile hightlighting
 autocmd BufNew,BufRead Gemfile set ft=ruby
+" Free Puppetfile highlighting
+autocmd BufNew,BufRead Puppetfile set ft=ruby
 
 
 " Status line

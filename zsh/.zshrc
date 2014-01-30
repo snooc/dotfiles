@@ -40,7 +40,10 @@ source $HOME/.zsh/prompt.zsh
 
 # The Almighty PATH(s)
 export GOPATH="$HOME/Code/goworkspace"
-export PATH="/usr/local/bin:$PATH:./bin"
+export PATH="/usr/local/bin:/usr/local/sbin:$PATH:./bin"
+
+# Docker
+export DOCKER_HOST=localhost
 
 # DIRENV
 if which direnv >/dev/null; then

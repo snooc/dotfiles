@@ -59,7 +59,6 @@ alias cgo="cd ~/Code/goworkspace"
 alias cgs="cd ~/Code/goworkspace/src"
 
 # Vim
-alias v="vim"
 alias vupdate="vim +BundleUpdate +qall"
 alias vinstall="vim +BundleInstall +qall"
 
@@ -75,3 +74,17 @@ alias cu="curl -sSNL"
 # Node
 alias n="node"
 alias nh="node --harmony"
+
+# Vagrant
+alias v="vagrant"
+alias vup="vagrant up"
+alias vp="vagrant provision"
+alias vd="vagrant destroy"
+alias vr="vagrant reload"
+alias vh="vagrant halt"
+alias vs="vagrant ssh"
+alias vst="vagrant status"
+alias vdall="VBoxManage list vms | cut -f 1 -d ' ' | xargs -I NAME sh -c 'VBoxManage controlvm NAME poweroff ; VBoxManage unregistervm NAME' ; rm -rf ~/VirtualBox\ VMs/*"
+
+# PHP
+alias psp="php -S localhost:8000 -t public"
