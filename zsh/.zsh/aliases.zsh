@@ -66,6 +66,7 @@ alias vinstall="vim +BundleInstall +qall"
 alias evim="vim ~/.vimrc"
 alias ezsh="vim ~/.zshrc"
 alias ezshd="vim ~/.zsh"
+alias ezsha="vim ~/.zsh/aliases.zsh"
 alias etmux="vim ~/.tmux.conf"
 
 # CURL
@@ -84,7 +85,13 @@ alias vr="vagrant reload"
 alias vh="vagrant halt"
 alias vs="vagrant ssh"
 alias vst="vagrant status"
-alias vdall="VBoxManage list vms | cut -f 1 -d ' ' | xargs -I NAME sh -c 'VBoxManage controlvm NAME poweroff ; VBoxManage unregistervm NAME' ; rm -rf ~/VirtualBox\ VMs/*"
 
 # PHP
 alias psp="php -S localhost:8000 -t public"
+
+# Docker
+alias d="docker"
+alias dup="boot2docker up"
+alias dh="boot2docker halt"
+alias dcnr="docker ps -a | grep 'Exit' | awk '{print $1}' | xargs docker rm"
+alias dcui="docker images | grep '<none>' | awk '{print $3}' | xargs docker rmi"

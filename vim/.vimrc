@@ -13,6 +13,7 @@ Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'derekwyatt/vim-scala'
 Bundle 'ekalinin/Dockerfile.vim'
 Bundle 'elixir-lang/vim-elixir'
+Bundle 'elzr/vim-json'
 Bundle 'ervandew/supertab'
 Bundle 'garbas/vim-snipmate'
 Bundle 'honza/vim-snippets'
@@ -30,6 +31,8 @@ Bundle 'tomtom/tlib_vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-obsession'
 Bundle 'tpope/vim-vinegar'
+
+Bundle 'altercation/vim-colors-solarized'
 
 filetype indent plugin on
 
@@ -80,7 +83,7 @@ set colorcolumn=80
 set encoding=utf8
 set so=14
 set previewheight=10
-set list listchars=tab:»·,trail:·
+set list listchars=tab:»\ ,trail:·
 
 " Emmet
 let g:user_emmet_leader_key = '<c-e>'
@@ -92,8 +95,8 @@ let g:user_emmet_leader_key = '<c-e>'
 " let g:netrw_winsize=20
 
 " Colors
-colorscheme base16-ocean
-set background=dark
+colorscheme solarized
+set background=light
 
 " Extra Syntax Higlighting for JS libs
 let g:used_javascript_libs = 'angularjs,jquery'
@@ -108,7 +111,8 @@ autocmd BufNew,BufRead Vagrantfile set ft=ruby
 autocmd BufNew,BufRead Gemfile set ft=ruby
 " Free Puppetfile highlighting
 autocmd BufNew,BufRead Puppetfile set ft=ruby
-
+" Free Berksfile hightlighting
+autocmd BufNew,BufRead Berksfile set ft=ruby
 
 " Status line
 set statusline=%F%m%r%h%w\
