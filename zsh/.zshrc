@@ -38,14 +38,13 @@ source $HOME/.zsh/functions.zsh
 source $HOME/.zsh/completions.zsh
 source $HOME/.zsh/prompt.zsh
 
+# Android
+export ANDROID_HOME=/usr/local/opt/android-sdk
+export PATH="$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools"
+
 # The Almighty PATH(s)
 export GOPATH="$HOME/Code/goworkspace"
-export PATH="$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH:./bin"
+export PATH="$PATH:$HOME/bin:/usr/local/bin:/usr/local/sbin:$GOPATH/bin"
 
 # Docker
 export DOCKER_HOST=localhost
-
-# DIRENV
-if which direnv >/dev/null; then
-	eval "$(direnv hook $0)"
-fi

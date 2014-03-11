@@ -22,3 +22,24 @@ function gc {
 function chpwd {
 	ls -G
 }
+
+# cool dig
+function diga {
+	echo ">> A Records for $1"
+	dig +noall +answer $1 a
+}
+
+function digmx {
+	echo ">> MX Records for $1"
+	dig +noall +answer $1 mx
+}
+
+function digc {
+	echo ">> C Records for $1"
+	dig +noall +answer $1 cname
+}
+
+function digtxt {
+	echo ">> TXT Records for $1"
+	dig +noall +answer $1 txt
+}

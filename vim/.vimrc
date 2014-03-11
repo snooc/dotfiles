@@ -31,10 +31,15 @@ Bundle 'tomtom/tlib_vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-obsession'
 Bundle 'tpope/vim-vinegar'
-
-Bundle 'altercation/vim-colors-solarized'
+Bundle 'kchmck/vim-coffee-script'
 
 filetype indent plugin on
+
+" Colors
+" colorscheme base16-tomorrow
+" set background=dark
+colorscheme base16-ocean
+set background=light
 
 set wildignore+=*.o,*.obj,*DS_Store*,tmp/*,*/log/*,.git/*,node_modules/*,.vagrant/*,.tmp/*,.librarian/*,.git*,.ruby-version,*.lock,.bundle/*
 
@@ -83,7 +88,7 @@ set colorcolumn=80
 set encoding=utf8
 set so=14
 set previewheight=10
-set list listchars=tab:»\ ,trail:·
+set list listchars=tab:\│\ ,trail:·
 
 " Emmet
 let g:user_emmet_leader_key = '<c-e>'
@@ -93,10 +98,6 @@ let g:user_emmet_leader_key = '<c-e>'
 " let g:netrw_browse_split=4 " Open in previous buffer
 " let g:netrw_preview=1 " Preview in vertical split
 " let g:netrw_winsize=20
-
-" Colors
-colorscheme solarized
-set background=light
 
 " Extra Syntax Higlighting for JS libs
 let g:used_javascript_libs = 'angularjs,jquery'
@@ -115,9 +116,9 @@ autocmd BufNew,BufRead Puppetfile set ft=ruby
 autocmd BufNew,BufRead Berksfile set ft=ruby
 
 " Status line
-set statusline=%F%m%r%h%w\
-set statusline+=%{fugitive#statusline()}
-set statusline+=[%{strlen(&fenc)?&fenc:&enc}]
+set statusline=%F%m%r%h%w\ \ \ \ \ \ \ 
+set statusline+=%{fugitive#statusline()}\ \ \ \ \ \ \ \ 
+set statusline+=[%{strlen(&fenc)?&fenc:&enc}]\ \ \ \ \ \ \ \ 
 set statusline+=\ [line\ %l\/%L]
 
 " Catch :W when it's supposed to be :w
@@ -137,6 +138,7 @@ autocmd BufWinLeave * call clearmatches()
 let mapleader=","
 
 map <leader>p :CtrlP<cr>
+map <leader><space> :noh<cr>
 
 " Mouse
 if has("mouse")

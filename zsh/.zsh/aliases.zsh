@@ -35,6 +35,9 @@ alias gm="git commit"
 alias gs="git status"
 alias gp="git push"
 alias gls="git ls-files"
+alias gc="git checkout"
+alias gcb="git checkout -b"
+alias gcm="git checkout master"
 
 # Rails
 alias r="rails"
