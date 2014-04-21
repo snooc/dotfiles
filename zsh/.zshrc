@@ -44,7 +44,15 @@ export PATH="$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools"
 
 # The Almighty PATH(s)
 export GOPATH="$HOME/Code/goworkspace"
-export PATH="$PATH:$HOME/bin:/usr/local/bin:/usr/local/sbin:$GOPATH/bin"
+export PATH="$HOME/bin:/usr/local/bin:/usr/local/sbin:$GOPATH/bin:./node_modules/.bin:$PATH"
+
+# The Postges
+export PGHOST="localhost"
+export PGPORT="5432"
+export PGSSLMODE="disable"
+
+# Laravel
+export LARAVEL_ENV="local"
 
 # Docker
 export DOCKER_HOST=localhost

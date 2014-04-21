@@ -7,31 +7,20 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 
-Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'chriskempson/base16-vim'
 Bundle 'christoomey/vim-tmux-navigator'
-Bundle 'derekwyatt/vim-scala'
-Bundle 'ekalinin/Dockerfile.vim'
-Bundle 'elixir-lang/vim-elixir'
-Bundle 'elzr/vim-json'
-Bundle 'ervandew/supertab'
-Bundle 'garbas/vim-snipmate'
-Bundle 'honza/vim-snippets'
-Bundle 'jelera/vim-javascript-syntax'
-Bundle 'jnwhiteh/vim-golang'
 Bundle 'kien/ctrlp.vim'
-Bundle 'mattn/emmet-vim'
-Bundle 'mustache/vim-mustache-handlebars'
-Bundle 'nathanaelkane/vim-indent-guides'
-Bundle 'othree/html5.vim'
-Bundle 'othree/javascript-libraries-syntax.vim'
-Bundle 'pangloss/vim-javascript'
-Bundle 'puppetlabs/puppet-syntax-vim'
-Bundle 'tomtom/tlib_vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-obsession'
 Bundle 'tpope/vim-vinegar'
-Bundle 'kchmck/vim-coffee-script'
+Bundle 'tpope/vim-dispatch'
+Bundle 'fatih/vim-go'
+Bundle 'rking/ag.vim'
+Bundle 'ervandew/supertab'
+Bundle 'mustache/vim-mustache-handlebars'
+Bundle 'brettof86/vim-swigjs'
+Bundle 'evidens/vim-twig'
+Bundle 'othree/html5.vim'
 
 filetype indent plugin on
 
@@ -39,7 +28,7 @@ filetype indent plugin on
 " colorscheme base16-tomorrow
 " set background=dark
 colorscheme base16-ocean
-set background=light
+set background=dark
 
 set wildignore+=*.o,*.obj,*DS_Store*,tmp/*,*/log/*,.git/*,node_modules/*,.vagrant/*,.tmp/*,.librarian/*,.git*,.ruby-version,*.lock,.bundle/*
 
@@ -47,10 +36,16 @@ let g:ctrlp_custom_ignore = 'node_modules'
 
 augroup myfiletypes
   autocmd!
-  autocmd FileType ruby,eruby,yaml,html,javascript,scss,css,puppet setlocal ai sw=2 sts=2 et
+  autocmd FileType ruby,eruby,yaml,javascript,scss,css,puppet setlocal ai sw=2 sts=2 et
   autocmd FileType ruby,eruby,yaml setlocal path+=lib
-  autocmd FileType php setlocal ai sw=4 sts=4 et
+  autocmd FileType php setlocal ai sw=4 sts=4 et relativenumber
+  autocmd FileType go setlocal relativenumber
+  autocmd FileType html,mustache,handlebars,twig setlocal ai sw=4 sts=4 et relativenumber
 augroup END
+
+if !exists("g:gofmt_command")
+	let g:gofmt_command = "goimports"
+endif
 
 " Settings
 if &t_Co > 2 || has("gui_running")
@@ -137,8 +132,12 @@ autocmd BufWinLeave * call clearmatches()
 " Custom Mappings and Aliases
 let mapleader=","
 
+" NetRW can kill directories
+let g:netrw_localrmdir="rm -r"
+
 map <leader>p :CtrlP<cr>
 map <leader><space> :noh<cr>
+au Filetype go nnoremap <leader>r :GoRun %<cr>
 
 " Mouse
 if has("mouse")

@@ -38,6 +38,7 @@ alias gls="git ls-files"
 alias gc="git checkout"
 alias gcb="git checkout -b"
 alias gcm="git checkout master"
+alias gv="vim +Gcommit"
 
 # Rails
 alias r="rails"
