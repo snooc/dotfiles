@@ -18,6 +18,9 @@ alias cd..="cd .."
 alias cd...="cd .."
 alias tr="tree -I 'node_modules'"
 
+alias cs="cd $HOME/.ssh"
+alias essh="vim $HOME/.ssh/config"
+
 # Downloads folder
 alias cdo="cd ~/Downloads"
 
@@ -39,6 +42,9 @@ alias gc="git checkout"
 alias gcb="git checkout -b"
 alias gcm="git checkout master"
 alias gv="vim +Gcommit"
+
+alias gcccize='git config user.name "Cody Coons" && git config user.email "cody@codycoons.com"'
+alias gcffize='git config user.name "Cody Coons" && git config user.email "cody@forefrontweb.com"'
 
 # Rails
 alias r="rails"
