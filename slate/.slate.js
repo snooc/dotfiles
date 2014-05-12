@@ -15,6 +15,14 @@ var chatCorner = slate.operation('corner', {
   'width': 'screenSizeX*.4',
   'height': 'screenSizeY*.4'
 });
+var vmWindow = slate.operation('resize', {
+  'width': '1600',
+  'height': '900'
+});
+var vmTop = slate.operation('push', {
+  'direction': 'up',
+  'style': 'center'
+});
 
 // Development Layout
 var devLayout = slate.layout('dev', {
@@ -45,6 +53,12 @@ var devLayout = slate.layout('dev', {
   },
   'HipChat': {
     'operations': [chatCorner],
+    'repeat': true
+  },
+
+  // VM's should be 1600x900 and live centered and at the top
+  'Microsoft Remote Desktop': {
+    'operations': [vmWindow, vmTop],
     'repeat': true
   }
 });
