@@ -27,7 +27,7 @@ filetype indent plugin on
 " Colors
 " colorscheme base16-tomorrow
 " set background=dark
-colorscheme base16-ocean
+colorscheme base16-brewer
 set background=dark
 
 set wildignore+=*.o,*.obj,*DS_Store*,tmp/*,*/log/*,.git/*,node_modules/*,.vagrant/*,.tmp/*,.librarian/*,.git*,.ruby-version,*.lock,.bundle/*
@@ -38,7 +38,7 @@ augroup myfiletypes
   autocmd!
   autocmd FileType ruby,eruby,yaml,javascript,scss,css,puppet setlocal ai sw=2 sts=2 et
   autocmd FileType ruby,eruby,yaml setlocal path+=lib
-  autocmd FileType php setlocal ai sw=4 sts=4 et relativenumber
+  autocmd FileType php setlocal relativenumber
   autocmd FileType go setlocal relativenumber
   autocmd FileType html,mustache,handlebars,twig setlocal ai sw=4 sts=4 et relativenumber
 augroup END

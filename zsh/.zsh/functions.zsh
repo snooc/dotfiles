@@ -43,3 +43,7 @@ function digtxt {
 	echo ">> TXT Records for $1"
 	dig +noall +answer $1 txt
 }
+
+function finddups {
+	for i in $(find . -type f -exec openssl sha1 {} \+ | tee .hashes.tmp | sed 's/^.* //' | sort | uniq -d); do grep $i .hashes.tmp; echo; done;
+}
