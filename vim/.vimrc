@@ -27,7 +27,8 @@ filetype indent plugin on
 " Colors
 " colorscheme base16-tomorrow
 " set background=dark
-colorscheme base16-brewer
+" colorscheme base16-brewer
+colorscheme base16-eighties
 set background=dark
 
 set wildignore+=*.o,*.obj,*DS_Store*,tmp/*,*/log/*,.git/*,node_modules/*,.vagrant/*,.tmp/*,.librarian/*,.git*,.ruby-version,*.lock,.bundle/*
@@ -41,6 +42,7 @@ augroup myfiletypes
   autocmd FileType php setlocal relativenumber
   autocmd FileType go setlocal relativenumber
   autocmd FileType html,mustache,handlebars,twig setlocal ai sw=4 sts=4 et relativenumber
+  autocmd FileType markdown setlocal ai sw=2 sts=2 et textwidth=80
 augroup END
 
 if !exists("g:gofmt_command")

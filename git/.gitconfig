@@ -2,13 +2,14 @@
 	name = Cody Coons
 	email = cody@codycoons.com
 [core]
-	excludesfile = ~/.global_gitignore
+	excludesfile = /Users/codycoons/.global_gitignore
 	editor = vim
 [color]
 	ui = true
 [push]
 	default = simple
 [alias]
+	cob = checkout -b
 	co = checkout
 	br = branch
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
@@ -17,3 +18,9 @@
 [color "status"]
 	changed = blue normal bold
 	header = white normal dim
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true

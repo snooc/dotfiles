@@ -15,12 +15,22 @@ var chatCorner = slate.operation('corner', {
   'width': 'screenSizeX*.4',
   'height': 'screenSizeY*.4'
 });
+var hipChatCorner = slate.operation('move', {
+  'x': 'screenOriginX-4',
+  'y': 'screenOriginY',
+  'width': 'windowSizeX',
+  'height': 'windowSizeY'
+});
 var vmWindow = slate.operation('resize', {
   'width': '1600',
   'height': '900'
 });
 var vmTop = slate.operation('push', {
   'direction': 'up',
+  'style': 'center'
+});
+var sequelBottom = slate.operation('push', {
+  'direction': 'bottom',
   'style': 'center'
 });
 
@@ -52,13 +62,19 @@ var devLayout = slate.layout('dev', {
     'repeat': true
   },
   'HipChat': {
-    'operations': [chatCorner],
+    'operations': [hipChatCorner],
     'repeat': true
   },
 
   // VM's should be 1600x900 and live centered and at the top
   'Microsoft Remote Desktop': {
     'operations': [vmWindow, vmTop],
+    'repeat': true
+  },
+
+  // Sequel Pro should be at the bottom and centered
+  'Sequel Pro': {
+    'operations': [sequelBottom],
     'repeat': true
   }
 });
