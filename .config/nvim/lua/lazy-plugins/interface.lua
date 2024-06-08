@@ -74,6 +74,7 @@ return {
     keys = {
       { "-", function() require("oil").toggle_float() end, desc = "Oil" },
     },
+    lazy = false,
   },
 
   {
