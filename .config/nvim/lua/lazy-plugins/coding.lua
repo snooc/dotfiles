@@ -104,11 +104,32 @@ return {
         ["*"] = { "codespell" },
         ["_"] = { "trim_whitespace" },
       },
-      format_on_save = {
-        lsp_fallback = true,
-        timeout_ms = 500,
-      },
+      format_on_save = function(bufnr)
+        if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then return end
+        return { timeout_ms = 500, lsp_fallback = true }
+      end,
     },
+    config = function(_, opts)
+      require("conform").setup(opts)
+
+      vim.api.nvim_create_user_command("ConformFormatDisable", function(args)
+        if args.bang then
+          vim.b.disable_autoformat = true
+        else
+          vim.g.disable_autoformat = true
+        end
+      end, {
+        desc = "Disable Conform autoformat-on-save",
+        bang = true,
+      })
+
+      vim.api.nvim_create_user_command("ConformFormatEnable", function()
+        vim.b.disable_autoformat = false
+        vim.g.disable_autoformat = true
+      end, {
+        desc = "Enable Conform autoformat-on-save",
+      })
+    end,
   },
 
   {
