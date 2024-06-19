@@ -19,6 +19,6 @@ require("lazy").setup({
     colorscheme = { "material" },
   },
   ui = {
-    border = "double",
+    border = "rounded",
   },
 })

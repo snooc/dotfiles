@@ -1,22 +1,22 @@
-local terminals = {}
-local toggle_terminal = function(name, cmd)
+local M = {}
+
+M.terminals = {}
+
+M.toggle_terminal = function(name, cmd)
   local Terminal = require("toggleterm.terminal").Terminal
 
-  if terminals[name] == nil then
-    terminals.insert(
-      name,
-      Terminal:new({
-        cmd = cmd,
-        hidden = true,
-        direction = "float",
-        float_opts = {
-          border = "double",
-        },
-      })
-    )
+  if M.terminals[name] == nil then
+    M.terminals[name] = Terminal:new({
+      cmd = cmd,
+      hidden = true,
+      direction = "float",
+      float_opts = {
+        border = "rounded",
+      },
+    })
   end
 
-  terminals[name]:toggle()
+  M.terminals[name]:toggle()
 end
 
 return {
@@ -28,17 +28,17 @@ return {
       { "<leader>\\", "<cmd>ToggleTerm<cr>", desc = "Toggle Terminal" },
       {
         "<leader>\\d",
-        function() toggle_terminal("lazydocker", "lazydocker") end,
+        function() M.toggle_terminal("lazydocker", "lazydocker") end,
         desc = "Toggle lazydocker in Terminal",
       },
       {
         "<leader>\\g",
-        function() toggle_terminal("lazygit", "lazygit") end,
+        function() M.toggle_terminal("lazygit", "lazygit") end,
         desc = "Toggle lazydocker in Terminal",
       },
       {
         "<leader>\\k",
-        function() toggle_terminal("k9s", "k9s") end,
+        function() M.toggle_terminal("k9s", "k9s") end,
         desc = "Toggle lazydocker in Terminal",
       },
     },

@@ -3,7 +3,7 @@ return {
     "williamboman/mason.nvim",
     opts = {
       ui = {
-        border = "double",
+        border = "rounded",
       },
     },
   },
@@ -86,7 +86,7 @@ return {
     "neovim/nvim-lspconfig",
     lazy = false,
     config = function()
-      require("lspconfig.ui.windows").default_options.border = "double"
+      require("lspconfig.ui.windows").default_options.border = "rounded"
 
       -- Load custom LSP config
       require("config.lsp")
