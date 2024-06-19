@@ -21,6 +21,8 @@ alias kns="kubens"
 alias kc="kubectl"
 alias zj="zellij"
 alias tree="eza --tree"
+alias lg="lazygit"
+alias ld="lazydocker"
 
 setopt completealiases
 function cdc() {

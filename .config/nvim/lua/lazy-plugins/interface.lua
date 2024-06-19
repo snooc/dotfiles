@@ -19,7 +19,32 @@ return {
     config = function(_, opts)
       require("material").setup(opts)
       vim.g.material_style = "palenight"
-      vim.cmd([[colorscheme material]])
+      -- vim.cmd([[colorscheme material]])
+    end,
+  },
+
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    lazy = false,
+    priority = 1000,
+    opts = {
+      integrations = {
+        cmp = true,
+        gitsigns = true,
+        treesitter = true,
+        notify = true,
+        bufferline = true,
+        mason = true,
+        markdown = true,
+        neotree = true,
+        telescope = { enabled = true },
+        which_key = true,
+      },
+    },
+    config = function(_, opts)
+      require("catppuccin").setup(opts)
+      vim.cmd([[colorscheme catppuccin]])
     end,
   },
 
@@ -50,6 +75,23 @@ return {
         },
         lualine_z = {
           "mode",
+        },
+      },
+    },
+  },
+
+  {
+    "akinsho/bufferline.nvim",
+    version = "*",
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+    },
+    opts = {
+      options = {
+        offsets = {
+          {
+            filetype = "neo-tree",
+          },
         },
       },
     },
@@ -95,66 +137,6 @@ return {
     "lewis6991/gitsigns.nvim",
     event = { "BufReadPre", "BufNewFile" },
     opts = {},
-  },
-
-  {
-    "akinsho/toggleterm.nvim",
-    version = "*",
-    opts = {},
-    keys = {
-      { "<leader>\\", "<cmd>ToggleTerm<cr>", desc = "Toggle Terminal" },
-      {
-        "<leader>\\d",
-        function()
-          local Terminal = require("toggleterm.terminal").Terminal
-          local lazydocker = Terminal:new({
-            cmd = "lazydocker",
-            hidden = true,
-            direction = "float",
-            float_opts = {
-              border = "double",
-            },
-          })
-
-          lazydocker:toggle()
-        end,
-        desc = "Toggle lazydocker in Terminal",
-      },
-      {
-        "<leader>\\g",
-        function()
-          local Terminal = require("toggleterm.terminal").Terminal
-          local lazydocker = Terminal:new({
-            cmd = "lazygit",
-            hidden = true,
-            direction = "float",
-            float_opts = {
-              border = "double",
-            },
-          })
-
-          lazydocker:toggle()
-        end,
-        desc = "Toggle lazydocker in Terminal",
-      },
-      {
-        "<leader>\\k",
-        function()
-          local Terminal = require("toggleterm.terminal").Terminal
-          local lazydocker = Terminal:new({
-            cmd = "k9s",
-            hidden = true,
-            direction = "float",
-            float_opts = {
-              border = "double",
-            },
-          })
-
-          lazydocker:toggle()
-        end,
-        desc = "Toggle lazydocker in Terminal",
-      },
-    },
   },
 
   {
