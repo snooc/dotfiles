@@ -2,57 +2,49 @@
 vim.g.mapleader = " "
 
 -- General ====================================================================
-vim.o.backup = false -- Don"t store backup
-vim.o.mouse = "a" -- Enable mouse
--- vim.o.mousescroll  = "ver:25,hor:6" -- Customize mouse scroll
-vim.o.switchbuf = "usetab" -- Use already opened buffers when switching
-vim.o.writebackup = false -- Don"t store backup
-vim.o.undofile = true -- Enable persistent undo
+vim.opt.backup = false -- Don"t store backup
+vim.opt.mouse = "a" -- Enable mouse
+-- vim.opt.mousescroll  = "ver:25,hor:6" -- Customize mouse scroll
+vim.opt.switchbuf = "usetab" -- Use already opened buffers when switching
+vim.opt.writebackup = false -- Don"t store backup
+vim.opt.undofile = true -- Enable persistent undo
 
-vim.o.shada = "'100,<50,s10,:1000,/100,@100,h" -- Limit what is stored in ShaDa file
+vim.opt.shada = "'100,<50,s10,:1000,/100,@100,h" -- Limit what is stored in ShaDa file
 
 vim.cmd("filetype plugin indent on") -- Enable all filetype plugins
 
 -- UI =========================================================================
-vim.o.breakindent = true -- Indent wrapped lines to match line start
-vim.o.colorcolumn = "+1" -- Draw colored column one step to the right of desired maximum width
-vim.o.cursorline = true -- Enable highlighting of the current line
-vim.o.laststatus = 2 -- Always show statusline
-vim.o.linebreak = true -- Wrap long lines at "breakat" (if "wrap" is set)
-vim.o.list = true -- Show helpful character indicators
-vim.o.number = true -- Show line numbers
-vim.o.relativenumber = true -- Show relative line numbers
-vim.o.pumblend = 10 -- Make builtin completion menus slightly transparent
-vim.o.pumheight = 10 -- Make popup menu smaller
-vim.o.ruler = false -- Don"t show cursor position
-vim.o.shortmess = "aoOWFcS" -- Disable certain messages from |ins-completion-menu|
-vim.o.showmode = false -- Don"t show mode in command line
-vim.o.showtabline = 2 -- Always show tabline
-vim.o.signcolumn = "yes" -- Always show signcolumn or it would frequently shift
-vim.o.splitbelow = true -- Horizontal splits will be below
-vim.o.splitright = true -- Vertical splits will be to the right
-vim.o.termguicolors = true -- Enable gui colors
-vim.o.winblend = 10 -- Make floating windows slightly transparent
-vim.o.wrap = false -- Display long lines as just one line
+vim.opt.breakindent = true -- Indent wrapped lines to match line start
+vim.opt.colorcolumn = "+1" -- Draw colored column one step to the right of desired maximum width
+vim.opt.cursorline = true -- Enable highlighting of the current line
+vim.opt.laststatus = 2 -- Always show statusline
+vim.opt.linebreak = true -- Wrap long lines at "breakat" (if "wrap" is set)
+vim.opt.list = true -- Show helpful character indicators
+vim.opt.number = true -- Show line numbers
+vim.opt.relativenumber = true -- Show relative line numbers
+vim.opt.pumblend = 10 -- Make builtin completion menus slightly transparent
+vim.opt.pumheight = 10 -- Make popup menu smaller
+vim.opt.ruler = false -- Don"t show cursor position
+vim.opt.shortmess = "aoOWFcS" -- Disable certain messages from |ins-completion-menu|
+vim.opt.showmode = false -- Don"t show mode in command line
+vim.opt.showtabline = 2 -- Always show tabline
+vim.opt.signcolumn = "yes" -- Always show signcolumn or it would frequently shift
+vim.opt.splitbelow = true -- Horizontal splits will be below
+vim.opt.splitright = true -- Vertical splits will be to the right
+vim.opt.termguicolors = true -- Enable gui colors
+vim.opt.winblend = 10 -- Make floating windows slightly transparent
+vim.opt.wrap = false -- Display long lines as just one line
 
-vim.o.fillchars = table.concat({
-  "eob: ",
-  "fold:╌",
-  "horiz:═",
-  "horizdown:╦",
-  "horizup:╩",
-  "vert:║",
-  "verthoriz:╬",
-  "vertleft:╣",
-  "vertright:╠",
-}, ",")
-vim.o.listchars = table.concat({ "extends:…", "nbsp:␣", "precedes:…", "tab:> " }, ",")
-vim.o.cursorlineopt = "screenline,number" -- Show cursor line only screen line when wrapped
-
-if vim.fn.has("nvim-0.9") == 1 then
-  vim.opt.shortmess:append("C") -- Don"t show "Scanning..." messages
-  vim.o.splitkeep = "screen" -- Reduce scroll during window split
-end
+vim.opt.fillchars = {
+  foldopen = "",
+  foldclose = "",
+  fold = " ",
+  foldsep = " ",
+  diff = "╱",
+  eob = " ",
+}
+--vim.opt.listchars = table.concat({ "extends:…", "nbsp:␣", "precedes:…", "tab:> " }, ",")
+vim.opt.cursorlineopt = "screenline,number" -- Show cursor line only screen line when wrapped
 
 -- Colors =====================================================================
 -- Enable syntax highlighting if it wasn"t already (as it is time consuming)
@@ -60,17 +52,17 @@ end
 if vim.fn.exists("syntax_on") ~= 1 then vim.cmd("syntax enable") end
 
 -- Editing ====================================================================
-vim.o.autoindent = true -- Use auto indent
-vim.o.expandtab = true -- Convert tabs to spaces
-vim.o.formatoptions = "rqnl1j" -- Improve comment editing
-vim.o.ignorecase = true -- Ignore case when searching (use `\C` to force not doing that)
-vim.o.incsearch = true -- Show search results while typing
-vim.o.infercase = true -- Infer letter cases for a richer built-in keyword completion
-vim.o.shiftwidth = 2 -- Use this number of spaces for indentation
-vim.o.smartcase = true -- Don"t ignore case when searching if pattern has upper case
-vim.o.smartindent = true -- Make indenting smart
-vim.o.tabstop = 2 -- Insert 2 spaces for a tab
-vim.o.virtualedit = "block" -- Allow going past the end of line in visual block mode
+vim.opt.autoindent = true -- Use auto indent
+vim.opt.expandtab = true -- Convert tabs to spaces
+vim.opt.formatoptions = "rqnl1j" -- Improve comment editing
+vim.opt.ignorecase = true -- Ignore case when searching (use `\C` to force not doing that)
+vim.opt.incsearch = true -- Show search results while typing
+vim.opt.infercase = true -- Infer letter cases for a richer built-in keyword completion
+vim.opt.shiftwidth = 2 -- Use this number of spaces for indentation
+vim.opt.smartcase = true -- Don"t ignore case when searching if pattern has upper case
+vim.opt.smartindent = true -- Make indenting smart
+vim.opt.tabstop = 4 -- Insert 2 spaces for a tab
+vim.opt.virtualedit = "block" -- Allow going past the end of line in visual block mode
 
 vim.opt.iskeyword:append("-") -- Treat dash separated words as a word text object
 
@@ -79,24 +71,24 @@ vim.opt.iskeyword:append("-") -- Treat dash separated words as a word text objec
 -- least one special character (digit, -, +, *) possibly followed some
 -- punctuation (. or `)`) followed by at least one space is a start of list
 -- item"
-vim.o.formatlistpat = [[^\s*[0-9\-\+\*]\+[\.\)]*\s\+]]
+vim.opt.formatlistpat = [[^\s*[0-9\-\+\*]\+[\.\)]*\s\+]]
 
 -- Spelling ===================================================================
-vim.o.spelllang = "en,ru,uk" -- Define spelling dictionaries
-vim.o.spelloptions = "camel" -- Treat parts of camelCase words as separate words
+vim.opt.spelllang = "en,ru,uk" -- Define spelling dictionaries
+vim.opt.spelloptions = "camel" -- Treat parts of camelCase words as separate words
 vim.opt.complete:append("kspell") -- Add spellcheck options for autocomplete
 vim.opt.complete:remove("t") -- Don"t use tags for completion
 
-vim.o.dictionary = vim.fn.stdpath("config") .. "/misc/dict/english.txt" -- Use specific dictionaries
+vim.opt.dictionary = vim.fn.stdpath("config") .. "/misc/dict/english.txt" -- Use specific dictionaries
 
 -- Folds ======================================================================
-vim.o.foldmethod = "indent" -- Set "indent" folding method
-vim.o.foldlevel = 999 -- Display all folds except top ones
-vim.o.foldnestmax = 10 -- Create folds only for some number of nested levels
+vim.opt.foldmethod = "indent" -- Set "indent" folding method
+vim.opt.foldlevel = 999 -- Display all folds except top ones
+vim.opt.foldnestmax = 10 -- Create folds only for some number of nested levels
 vim.g.markdown_folding = 1 -- Use folding by heading in markdown files
 
 if vim.fn.has("nvim-0.10") == 1 then
-  vim.o.foldtext = "" -- Use underlying text with its highlighting
+  vim.opt.foldtext = "" -- Use underlying text with its highlighting
 end
 
 -- Custom autocommands ========================================================

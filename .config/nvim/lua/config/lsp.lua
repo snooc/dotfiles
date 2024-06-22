@@ -33,6 +33,11 @@ lspconfig.lua_ls.setup({
   },
 })
 
+-- Go
+lspconfig.gopls.setup({
+  capabilities = cmp_lsp_default_capabilities,
+})
+
 -- Python
 lspconfig.pyright.setup({
   capabilities = cmp_lsp_default_capabilities,
