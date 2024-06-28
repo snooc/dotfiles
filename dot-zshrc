@@ -1,3 +1,5 @@
+export PATH="${PATH}:${HOME}/.local/bin"
+
 eval "$(mise activate zsh)"
 eval "$(starship init zsh)"
 
@@ -23,6 +25,7 @@ alias zj="zellij"
 alias tree="eza --tree"
 alias lg="lazygit"
 alias ld="lazydocker"
+alias fudns='sudo dscacheutil -flushcache; sleep 2; sudo killall -HUP mDNSResponder;'
 
 setopt completealiases
 function cdc() {
