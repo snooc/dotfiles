@@ -103,3 +103,5 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
   desc = [[Ensure proper "formatoptions"]],
 })
+
+vim.keymap.set("n", "<leader>q", vim.cmd.quitall, { silent = true })

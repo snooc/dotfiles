@@ -1,50 +1,18 @@
 return {
   {
-    "marko-cerovac/material.nvim",
+    "scottmckendry/cyberdream.nvim",
     lazy = false,
     priority = 1000,
     opts = {
-      high_visibility = {
-        darker = true,
-      },
-      plugins = {
-        "gitsigns",
-        "nvim-cmp",
-        "nvim-notify",
-        "nvim-web-devicons",
-        "telescope",
-        "trouble",
-      },
+      transparent = true,
+      italic_comments = true,
+      borderless_telescope = true,
+      terminal_colors = true,
     },
     config = function(_, opts)
-      require("material").setup(opts)
-      vim.g.material_style = "palenight"
-      -- vim.cmd([[colorscheme material]])
-    end,
-  },
+      require("cyberdream").setup(opts)
 
-  {
-    "catppuccin/nvim",
-    name = "catppuccin",
-    lazy = false,
-    priority = 1000,
-    opts = {
-      integrations = {
-        cmp = true,
-        gitsigns = true,
-        treesitter = true,
-        notify = true,
-        bufferline = true,
-        mason = true,
-        markdown = true,
-        neotree = true,
-        telescope = { enabled = true },
-        which_key = true,
-      },
-    },
-    config = function(_, opts)
-      require("catppuccin").setup(opts)
-      vim.cmd([[colorscheme catppuccin]])
+      vim.cmd([[colorscheme cyberdream]])
     end,
   },
 
@@ -55,13 +23,27 @@ return {
     },
     event = "VeryLazy",
     opts = {
-      theme = "auto",
+      options = {
+        theme = "auto",
+        component_separators = { left = " ", right = " " },
+        section_separators = { left = " ", right = " " },
+        globalstatus = true,
+        disabled_filetypes = { statusline = { "dashboard", "alpha" } },
+      },
       sections = {
         lualine_a = { "mode" },
         lualine_b = { "branch" },
         lualine_c = {
-          { "diagnostics" },
-          { "filetype", icon_only = false, separator = "", padding = { left = 1, right = 0 } },
+          {
+            "diagnostics",
+            symbols = {
+              error = " ",
+              warn = " ",
+              info = " ",
+              hint = "󰝶 ",
+            },
+          },
+          { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
           { "filename", path = 1, symbols = { modified = "  ", readonly = "", unnamed = "" } },
         },
 
@@ -77,6 +59,7 @@ return {
           "mode",
         },
       },
+      extensions = { "lazy", "toggleterm", "mason", "neo-tree", "trouble" },
     },
   },
 
@@ -141,13 +124,17 @@ return {
 
   {
     "nvim-telescope/telescope.nvim",
-    lazy = false,
-    event = "VeryLazy",
-    opts = {},
+    opts = {
+      defaults = {
+        hidden = true,
+        -- borderchars = { " ", " ", "", " ", " ", " ", " ", " " },
+      },
+    },
     keys = {
       { "<leader><space>", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
-      { "<leader>,", "<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>", desc = "Switch Buffers" },
-      { "<leader>/", "<cmd>Telescope live_grep<cr>", desc = "Grep" },
+      { "<leader>fb", "<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>", desc = "Switch Buffers" },
+      { "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Grep" },
+      { "<leader>fh", "<cmd>Telescope highlights<cr>", desc = "Highlights" },
     },
   },
 

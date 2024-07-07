@@ -16,9 +16,9 @@ require("lazy").setup({
     { import = "lazy-plugins" },
   },
   install = {
-    colorscheme = { "catppuccin" },
+    colorscheme = { "cyberdream" },
   },
-  ui = {
-    border = "rounded",
+  dev = {
+    path = "~/Code",
   },
 })
