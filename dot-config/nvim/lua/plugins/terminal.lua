@@ -11,7 +11,11 @@ M.toggle_terminal = function(name, cmd)
       hidden = true,
       direction = "float",
       float_opts = {
-        border = "rounded",
+        border = "none",
+        winblend = 5,
+      },
+      highlights = {
+        NormalFloat = { link = "NormalFloat" },
       },
     })
   end

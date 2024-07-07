@@ -6,7 +6,7 @@
 
 # Import additional configuration files
 import = [
-  "~/.config/alacritty/palenight.toml"
+  "~/.config/alacritty/cyberdream.toml"
 ]
 
 # Shell program and its arguments
@@ -112,7 +112,7 @@ italic = { style = "Italic" }  # Inherits family from normal, Default style: Ita
 bold_italic = { style = "Bold Italic" }  # Inherits family from normal, Default style: Bold Italic
 
 # Font size in points
-size = 12  # Default: 11.25
+size = 13  # Default: 11.25
 
 # Offset is extra space around each character
 offset = { x = 0, y = 0 }  # Default: x = 0, y = 0

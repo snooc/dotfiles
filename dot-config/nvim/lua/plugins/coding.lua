@@ -89,7 +89,7 @@ return {
       require("lspconfig.ui.windows").default_options.border = "rounded"
 
       -- Load custom LSP config
-      require("config.lsp")
+      require("core/lsp")
     end,
   },
 

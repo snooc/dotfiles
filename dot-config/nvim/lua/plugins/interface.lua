@@ -8,6 +8,13 @@ return {
       italic_comments = true,
       borderless_telescope = true,
       terminal_colors = true,
+      theme = {
+        overrides = function(t)
+          return {
+            NormalFloat = { bg = t.bgAlt },
+          }
+        end,
+      },
     },
     config = function(_, opts)
       require("cyberdream").setup(opts)
@@ -120,22 +127,6 @@ return {
     "lewis6991/gitsigns.nvim",
     event = { "BufReadPre", "BufNewFile" },
     opts = {},
-  },
-
-  {
-    "nvim-telescope/telescope.nvim",
-    opts = {
-      defaults = {
-        hidden = true,
-        -- borderchars = { " ", " ", "", " ", " ", " ", " ", " " },
-      },
-    },
-    keys = {
-      { "<leader><space>", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
-      { "<leader>fb", "<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>", desc = "Switch Buffers" },
-      { "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Grep" },
-      { "<leader>fh", "<cmd>Telescope highlights<cr>", desc = "Highlights" },
-    },
   },
 
   {
