@@ -1,3 +1,3 @@
-require("core/mise")
-require("core/options")
-require("core/lazy")
+require("core.mise")
+require("core.options")
+require("core.lazy")

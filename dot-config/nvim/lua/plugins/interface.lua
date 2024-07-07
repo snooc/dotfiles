@@ -100,7 +100,7 @@ return {
       },
       view_options = {
         show_hidden = false,
-        is_hidden_file = function(name, _) return require("util").is_hidden_file(name) end,
+        is_hidden_file = function(name, _) return require("core.utils").is_hidden_file(name) end,
       },
     },
     keys = {
