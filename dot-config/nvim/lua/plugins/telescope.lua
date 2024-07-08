@@ -5,7 +5,7 @@ return {
       defaults = {
         hidden = true,
 
-        borderchars = { " ", " ", "", " ", " ", " ", " ", " " },
+        -- borderchars = { " ", " ", "", " ", " ", " ", " ", " " },
         layout_strategy = "horizontal",
         sorting_strategy = "ascending",
 

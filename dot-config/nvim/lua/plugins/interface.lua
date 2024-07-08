@@ -1,29 +1,5 @@
 return {
   {
-    "scottmckendry/cyberdream.nvim",
-    lazy = false,
-    priority = 1000,
-    opts = {
-      transparent = true,
-      italic_comments = true,
-      borderless_telescope = true,
-      terminal_colors = true,
-      theme = {
-        overrides = function(t)
-          return {
-            NormalFloat = { bg = t.bgAlt },
-          }
-        end,
-      },
-    },
-    config = function(_, opts)
-      require("cyberdream").setup(opts)
-
-      vim.cmd([[colorscheme cyberdream]])
-    end,
-  },
-
-  {
     "nvim-lualine/lualine.nvim",
     dependencies = {
       "nvim-tree/nvim-web-devicons",
@@ -85,28 +61,6 @@ return {
         },
       },
     },
-  },
-
-  {
-    "stevearc/oil.nvim",
-    dependencies = {
-      "nvim-tree/nvim-web-devicons",
-    },
-    opts = {
-      float = {
-        padding = 8,
-        max_width = 80,
-        max_height = 80,
-      },
-      view_options = {
-        show_hidden = false,
-        is_hidden_file = function(name, _) return require("core.utils").is_hidden_file(name) end,
-      },
-    },
-    keys = {
-      { "-", "<cmd>Oil<cr>", desc = "Oil" },
-    },
-    lazy = false,
   },
 
   {
