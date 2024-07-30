@@ -35,20 +35,14 @@ config.tab_bar_at_bottom = true
 config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 1000 }
 config.keys = {
 	{
-		key = "%",
-		mods = "LEADER|SHIFT",
+		key = "d",
+		mods = "CMD",
 		action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
 	},
 	{
-		key = '"',
-		mods = "LEADER|SHIFT",
+		key = "d",
+		mods = "CMD|SHIFT",
 		action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
-	},
-	-- Send "CTRL-A" to the terminal when pressing CTRL-A, CTRL-A
-	{
-		key = "a",
-		mods = "LEADER|CTRL",
-		action = wezterm.action.SendKey({ key = "a", mods = "CTRL" }),
 	},
 }
 
