@@ -60,6 +60,11 @@ lspconfig.helm_ls.setup({
   },
 })
 
+-- Typescript / Javascript
+lspconfig.tsserver.setup({
+  capabilities = cmp_lsp_default_capabilities,
+})
+
 -- YAML
 -- lspconfig.yamlls.setup({
 --   capabilities = cmp_lsp_default_capabilities,

@@ -1,13 +1,28 @@
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
+local get_appearance = function()
+	if wezterm.gui then
+		return wezterm.gui.get_appearance()
+	end
+	return "Dark"
+end
+
+local scheme_for_appearance = function(appearance)
+	if appearance:find("Dark") then
+		return "Cyberdream"
+	else
+		return "Cyberdream Light"
+	end
+end
+
 config.font = wezterm.font("JetBrainsMono Nerd Font Mono", {
 	weight = "Regular",
 	italic = false,
 })
 config.font_size = 14
 
-config.color_scheme = "Cyberdream"
+config.color_scheme = scheme_for_appearance(get_appearance())
 
 config.initial_rows = 50
 config.initial_cols = 180

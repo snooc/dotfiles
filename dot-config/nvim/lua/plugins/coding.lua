@@ -99,7 +99,7 @@ return {
       formatters_by_ft = {
         lua = { "stylua" },
         go = { "goimports", "gofmt" },
-        javascript = { { "prettierd", "prettier" } },
+        javascript = { "prettierd" },
         python = { { "isort", "black" } },
         ["*"] = { "codespell" },
         ["_"] = { "trim_whitespace" },
