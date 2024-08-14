@@ -32,7 +32,7 @@ config.window_padding = {
 	top = 60,
 	bottom = 0,
 }
-config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
+config.window_decorations = "INTEGRATED_BUTTONS|RESIZE|MACOS_FORCE_ENABLE_SHADOW"
 config.window_background_opacity = 0.85
 config.text_background_opacity = 0.85
 config.macos_window_background_blur = 20
