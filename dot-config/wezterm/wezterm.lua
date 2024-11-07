@@ -10,15 +10,18 @@ end
 
 local scheme_for_appearance = function(appearance)
 	if appearance:find("Dark") then
-		return "Cyberdream"
+		return "Tokyonight Night"
 	else
-		return "Cyberdream Light"
+		return "Tokyonight Day"
 	end
 end
 
-config.font = wezterm.font("JetBrainsMono Nerd Font Mono", {
+-- config.font = wezterm.font("JetBrainsMono Nerd Font Mono", {
+-- 	weight = "Regular",
+-- 	italic = false,
+-- })
+config.font = wezterm.font("CaskaydiaCove Nerd Font", {
 	weight = "Regular",
-	italic = false,
 })
 config.font_size = 14
 
@@ -33,9 +36,6 @@ config.window_padding = {
 	bottom = 0,
 }
 config.window_decorations = "INTEGRATED_BUTTONS|RESIZE|MACOS_FORCE_ENABLE_SHADOW"
-config.window_background_opacity = 0.85
-config.text_background_opacity = 0.85
-config.macos_window_background_blur = 20
 config.window_close_confirmation = "NeverPrompt"
 config.max_fps = 144
 config.animation_fps = 60

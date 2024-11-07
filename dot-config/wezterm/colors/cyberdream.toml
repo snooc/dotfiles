@@ -21,7 +21,7 @@ brights = [
     "#ffffff"
 ]
 
-curosr_bg = "#ffffff"
+cursor_bg = "#ffffff"
 cursor_border = "#ffffff"
 cursor_fg = "#16181a"
 foreground = "#ffffff"
