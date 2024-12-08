@@ -10,11 +10,23 @@ end
 
 local scheme_for_appearance = function(appearance)
 	if appearance:find("Dark") then
-		return "vscode-dark"
+		return "rose-pine"
 	else
-		return "vscode-light"
+		return "rose-pine-dawn"
 	end
 end
+
+-- local theme = wezterm.plugin.require("https://github.com/neapsix/wezterm")
+-- local rose_pine_theme_for_appearance = function(appearance)
+-- 	if appearance:find("Dark") then
+-- 		return theme.main
+-- 	else
+-- 		return theme.dawn
+-- 	end
+-- end
+-- config.colors = rose_pine_theme_for_appearance(get_appearance()).colors()
+
+config.color_scheme = scheme_for_appearance(get_appearance())
 
 config.font = wezterm.font("JetBrainsMono Nerd Font Mono", {
 	weight = "Regular",
@@ -24,8 +36,6 @@ config.font = wezterm.font("JetBrainsMono Nerd Font Mono", {
 -- 	weight = "Regular",
 -- })
 config.font_size = 14
-
-config.color_scheme = scheme_for_appearance(get_appearance())
 
 config.initial_rows = 50
 config.initial_cols = 180
