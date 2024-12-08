@@ -10,19 +10,19 @@ end
 
 local scheme_for_appearance = function(appearance)
 	if appearance:find("Dark") then
-		return "Tokyonight Night"
+		return "vscode-dark"
 	else
-		return "Tokyonight Day"
+		return "vscode-light"
 	end
 end
 
--- config.font = wezterm.font("JetBrainsMono Nerd Font Mono", {
--- 	weight = "Regular",
--- 	italic = false,
--- })
-config.font = wezterm.font("CaskaydiaCove Nerd Font", {
+config.font = wezterm.font("JetBrainsMono Nerd Font Mono", {
 	weight = "Regular",
+	italic = false,
 })
+-- config.font = wezterm.font("CaskaydiaCove Nerd Font", {
+-- 	weight = "Regular",
+-- })
 config.font_size = 14
 
 config.color_scheme = scheme_for_appearance(get_appearance())
@@ -30,8 +30,8 @@ config.color_scheme = scheme_for_appearance(get_appearance())
 config.initial_rows = 50
 config.initial_cols = 180
 config.window_padding = {
-	left = 20,
-	right = 20,
+	left = 10,
+	right = 10,
 	top = 60,
 	bottom = 0,
 }
@@ -41,10 +41,10 @@ config.max_fps = 144
 config.animation_fps = 60
 config.cursor_blink_rate = 250
 
-config.enable_tab_bar = true
-config.hide_tab_bar_if_only_one_tab = false
-config.use_fancy_tab_bar = false
-config.tab_bar_at_bottom = true
+config.enable_tab_bar = false
+-- config.hide_tab_bar_if_only_one_tab = false
+-- config.use_fancy_tab_bar = false
+-- config.tab_bar_at_bottom = true
 
 local act = wezterm.action
 config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 1000 }
@@ -67,6 +67,7 @@ config.keys = {
 			act.SendKey({ key = "L", mods = "CTRL" }),
 		}),
 	},
+	{ key = "F9", mods = "ALT", action = wezterm.action.ShowTabNavigator },
 }
 
 return config

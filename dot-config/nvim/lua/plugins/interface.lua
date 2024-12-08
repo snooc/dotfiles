@@ -54,10 +54,61 @@ return {
     },
     opts = {
       options = {
-        offsets = {
-          {
-            filetype = "neo-tree",
-          },
+        buffer_close_icon = "",
+        close_command = "bdelete %d",
+        close_icon = "",
+        indicator = {
+          style = "icon",
+          icon = " ",
+        },
+        left_trunc_marker = "",
+        modified_icon = "●",
+        offsets = { { filetype = "NvimTree", text = "EXPLORER", text_align = "center" } },
+        right_mouse_command = "bdelete! %d",
+        right_trunc_marker = "",
+        show_close_icon = false,
+        show_tab_indicators = true,
+      },
+      highlights = {
+        fill = {
+          fg = { attribute = "fg", highlight = "Normal" },
+          bg = { attribute = "bg", highlight = "StatusLineNC" },
+        },
+        background = {
+          fg = { attribute = "fg", highlight = "Normal" },
+          bg = { attribute = "bg", highlight = "StatusLine" },
+        },
+        buffer_visible = {
+          fg = { attribute = "fg", highlight = "Normal" },
+          bg = { attribute = "bg", highlight = "Normal" },
+        },
+        buffer_selected = {
+          fg = { attribute = "fg", highlight = "Normal" },
+          bg = { attribute = "bg", highlight = "Normal" },
+        },
+        separator = {
+          fg = { attribute = "bg", highlight = "Normal" },
+          bg = { attribute = "bg", highlight = "StatusLine" },
+        },
+        separator_selected = {
+          fg = { attribute = "fg", highlight = "Special" },
+          bg = { attribute = "bg", highlight = "Normal" },
+        },
+        separator_visible = {
+          fg = { attribute = "fg", highlight = "Normal" },
+          bg = { attribute = "bg", highlight = "StatusLineNC" },
+        },
+        close_button = {
+          fg = { attribute = "fg", highlight = "Normal" },
+          bg = { attribute = "bg", highlight = "StatusLine" },
+        },
+        close_button_selected = {
+          fg = { attribute = "fg", highlight = "Normal" },
+          bg = { attribute = "bg", highlight = "Normal" },
+        },
+        close_button_visible = {
+          fg = { attribute = "fg", highlight = "Normal" },
+          bg = { attribute = "bg", highlight = "Normal" },
         },
       },
     },
@@ -81,20 +132,17 @@ return {
     "lewis6991/gitsigns.nvim",
     event = { "BufReadPre", "BufNewFile" },
     opts = {},
+    config = function(_, opts)
+      require("gitsigns").setup(opts)
+      require("scrollbar.handlers.gitsigns").setup()
+    end,
   },
 
   {
-    "folke/which-key.nvim",
-    event = "VeryLazy",
-    init = function()
-      vim.o.timeout = true
-      vim.o.timeoutlen = 300
-    end,
-    opts = {
-      -- your configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
-    },
+    "petertriho/nvim-scrollbar",
+    dependencies = { "lewis6991/gitsigns.nvim" },
+    opts = {},
+    config = function(_, opts) require("scrollbar").setup(opts) end,
   },
 
   {

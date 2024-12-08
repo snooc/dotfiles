@@ -16,7 +16,7 @@ vim.cmd("filetype plugin indent on") -- Enable all filetype plugins
 -- UI =========================================================================
 vim.opt.breakindent = true -- Indent wrapped lines to match line start
 vim.opt.colorcolumn = "+1" -- Draw colored column one step to the right of desired maximum width
-vim.opt.cursorline = true -- Enable highlighting of the current line
+vim.opt.cursorline = false -- Enable highlighting of the current line
 vim.opt.laststatus = 2 -- Always show statusline
 vim.opt.linebreak = true -- Wrap long lines at "breakat" (if "wrap" is set)
 vim.opt.list = true -- Show helpful character indicators
