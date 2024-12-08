@@ -16,15 +16,19 @@ local scheme_for_appearance = function(appearance)
 	end
 end
 
--- local theme = wezterm.plugin.require("https://github.com/neapsix/wezterm")
--- local rose_pine_theme_for_appearance = function(appearance)
--- 	if appearance:find("Dark") then
--- 		return theme.main
--- 	else
--- 		return theme.dawn
--- 	end
--- end
--- config.colors = rose_pine_theme_for_appearance(get_appearance()).colors()
+local window_frame_for_appearance = function(appearance)
+	if appearance:find("Dark") then
+		return {
+			active_titlebar_bg = "#191724",
+			inactive_titlebar_bg = "#191724",
+		}
+	else
+		return {
+			active_titlebar_bg = "#faf4ed",
+			inactive_titlebar_bg = "#faf4ed",
+		}
+	end
+end
 
 config.color_scheme = scheme_for_appearance(get_appearance())
 
@@ -32,9 +36,6 @@ config.font = wezterm.font("JetBrainsMono Nerd Font Mono", {
 	weight = "Regular",
 	italic = false,
 })
--- config.font = wezterm.font("CaskaydiaCove Nerd Font", {
--- 	weight = "Regular",
--- })
 config.font_size = 14
 
 config.initial_rows = 50
@@ -51,10 +52,10 @@ config.max_fps = 144
 config.animation_fps = 60
 config.cursor_blink_rate = 250
 
-config.enable_tab_bar = false
--- config.hide_tab_bar_if_only_one_tab = false
--- config.use_fancy_tab_bar = false
--- config.tab_bar_at_bottom = true
+config.enable_tab_bar = true
+config.hide_tab_bar_if_only_one_tab = true
+config.use_fancy_tab_bar = false
+config.tab_bar_at_bottom = true
 
 local act = wezterm.action
 config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 1000 }

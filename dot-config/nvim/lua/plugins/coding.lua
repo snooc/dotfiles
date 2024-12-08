@@ -137,8 +137,8 @@ return {
     version = false,
     build = ":TSUpdate",
     opts = {
-      highlight = { enabled = true },
-      indent = { enabled = true },
+      highlight = { enable = true },
+      indent = { enable = true },
       ensure_installed = {
         "bash",
         "c",
