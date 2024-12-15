@@ -1,13 +1,15 @@
 return {
   {
-    "rose-pine/neovim",
-    name = "rose-pine",
+    "folke/tokyonight.nvim",
     lazy = false,
     priority = 1000,
-    opts = {},
+    opts = {
+      style = "moon",
+      light_style = "day",
+    },
     config = function(_, opts)
-      require("rose-pine").setup(opts)
-      vim.cmd([[colorscheme rose-pine]])
+      require("tokyonight").setup(opts)
+      vim.cmd([[colorscheme tokyonight]])
     end,
   },
 }

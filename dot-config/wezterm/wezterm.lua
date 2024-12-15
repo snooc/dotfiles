@@ -10,23 +10,9 @@ end
 
 local scheme_for_appearance = function(appearance)
 	if appearance:find("Dark") then
-		return "rose-pine"
+		return "tokyonight-storm"
 	else
-		return "rose-pine-dawn"
-	end
-end
-
-local window_frame_for_appearance = function(appearance)
-	if appearance:find("Dark") then
-		return {
-			active_titlebar_bg = "#191724",
-			inactive_titlebar_bg = "#191724",
-		}
-	else
-		return {
-			active_titlebar_bg = "#faf4ed",
-			inactive_titlebar_bg = "#faf4ed",
-		}
+		return "tokyonight-day"
 	end
 end
 
