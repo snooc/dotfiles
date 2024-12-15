@@ -16,7 +16,7 @@ require("lazy").setup({
     { import = "plugins" },
   },
   install = {
-    colorscheme = { "cyberdream" },
+    colorscheme = { "tokyonight-moon" },
   },
   dev = {
     path = "~/Code",

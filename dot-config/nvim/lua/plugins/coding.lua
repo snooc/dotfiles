@@ -1,6 +1,9 @@
 return {
   {
     "williamboman/mason.nvim",
+    dependencies = {
+      "williamboman/mason-lspconfig.nvim",
+    },
     opts = {
       ui = {
         border = "none",
@@ -9,87 +12,41 @@ return {
   },
 
   {
-    "L3MON4D3/LuaSnip",
-    dependencies = {
-      "saadparwaiz1/cmp_luasnip",
-      "rafamadriz/friendly-snippets",
+    "williamboman/mason-lspconfig.nvim",
+    opts = {
+      automatic_installation = true,
     },
   },
 
   {
-    "hrsh7th/nvim-cmp",
-    version = false,
-    event = { "InsertEnter", "CmdlineEnter" },
+    "saghen/blink.cmp",
     dependencies = {
-      "hrsh7th/cmp-buffer",
-      "hrsh7th/cmp-cmdline",
-      "hrsh7th/cmp-nvim-lsp",
-      "hrsh7th/cmp-path",
-      "petertriho/cmp-git",
+      "rafamadriz/friendly-snippets",
     },
-    opts = function()
-      local cmp = require("cmp")
-      local cmp_defaults = require("cmp.config.default")()
-
-      return {
-        snippet = {
-          expand = function(args) require("luasnip").lsp_expand(args.body) end,
-        },
-        mapping = cmp.mapping.preset.insert({
-          ["<C-b>"] = cmp.mapping.scroll_docs(-4),
-          ["<C-f>"] = cmp.mapping.scroll_docs(4),
-          ["<C-Space>"] = cmp.mapping.complete(),
-          ["<C-e>"] = cmp.mapping.abort(),
-          ["<CR>"] = cmp.mapping.confirm({ select = true }),
-        }),
-        sources = cmp.config.sources({
-          { name = "nvim_lsp" },
-          { name = "luasnip" },
-          { name = "buffer" },
-          { name = "path" },
-        }),
-        sorting = cmp_defaults.sorting,
-      }
-    end,
-    config = function(_, opts)
-      local cmp = require("cmp")
-      cmp.setup(opts)
-
-      -- Setup completion for git commits
-      cmp.setup.filetype("gitcommit", {
-        sources = cmp.config.sources({
-          { name = "git" },
-          { name = "buffer" },
-        }),
-      })
-      require("cmp_git").setup()
-
-      -- Setup completion for cmdline
-      -- cmp.setup.cmdline({ "/", "?" }, {
-      --   mapping = cmp.mapping.preset.cmdline(),
-      --   sources = {
-      --     { name = "buffer" },
-      --   },
-      -- })
-      -- cmp.setup.cmdline(":", {
-      --   mapping = cmp.mapping.preset.cmdline(),
-      --   sources = {
-      --     { name = "path" },
-      --     { name = "cmdline" },
-      --   },
-      --   matching = { disallow_symbol_nonprefix_matching = false },
-      -- })
-    end,
+    version = "v0.*",
+    opts = {
+      keymap = { preset = "super-tab" },
+    },
   },
 
   {
     "neovim/nvim-lspconfig",
-    lazy = false,
-    config = function()
-      require("lspconfig.ui.windows").default_options.border = "rounded"
-
-      -- Load custom LSP config
-      require("core.lsp")
+    dependencies = {
+      "saghen/blink.cmp",
+    },
+    opts = {
+      servers = {
+        -- All LSP servers are configured in independent lang-*.lua files
+      },
+    },
+    config = function(_, opts)
+      local lspconfig = require("lspconfig")
+      for server, config in pairs(opts.servers) do
+        -- passing config.capabilities to blink.cmp merges with the capabilities in your
+        -- `opts[server].capabilities, if you've defined it
+        config.capabilities = require("blink.cmp").get_lsp_capabilities(config.capabilities)
+        lspconfig[server].setup(config)
+      end
     end,
   },
 
@@ -97,12 +54,7 @@ return {
     "stevearc/conform.nvim",
     opts = {
       formatters_by_ft = {
-        lua = { "stylua" },
-        go = { "goimports", "gofmt" },
-        javascript = { "prettierd" },
-        python = { { "isort", "black" } },
-        ["*"] = { "codespell" },
-        ["_"] = { "trim_whitespace" },
+        -- All formatters are configured in independent lang-*.lua files
       },
       format_on_save = function(bufnr)
         if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then return end
@@ -140,28 +92,7 @@ return {
       highlight = { enable = true },
       indent = { enable = true },
       ensure_installed = {
-        "bash",
-        "c",
-        "diff",
-        "go",
-        "html",
-        "javascript",
-        "jsdoc",
-        "json",
-        "jsonc",
-        "lua",
-        "luadoc",
-        "luap",
-        "markdown",
-        "markdown_inline",
-        "python",
-        "query",
-        "regex",
-        "toml",
-        "tsx",
-        "typescript",
-        "xml",
-        "yaml",
+        -- All languages are configured in independent lang-*.lua files
       },
       additional_vim_regex_highlighting = { "markdown" },
     },
