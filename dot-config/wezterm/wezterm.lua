@@ -67,4 +67,7 @@ config.keys = {
 	{ key = "F9", mods = "ALT", action = wezterm.action.ShowTabNavigator },
 }
 
+config.enable_scroll_bar = true
+config.scrollback_lines = 999999
+
 return config
