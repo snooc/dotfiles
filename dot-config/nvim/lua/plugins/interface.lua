@@ -42,7 +42,7 @@ return {
           "mode",
         },
       },
-      extensions = { "lazy", "mason", "trouble" },
+      extensions = { "lazy", "mason", "trouble", "neo-tree", "trouble" },
     },
   },
 
@@ -82,6 +82,7 @@ return {
           "lazy",
           "mason",
           "notify",
+          "neo-tree",
         },
       },
     },
@@ -178,5 +179,35 @@ return {
         desc = "Buffer Local Keymaps (which-key)",
       },
     },
+  },
+
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons",
+      "MunifTanjim/nui.nvim",
+    },
+    opts = {},
+    keys = {
+      { "<leader>t", "<cmd>Neotree toggle<cr>", desc = "Toggle NeoTree" },
+    },
+  },
+
+  {
+    "lewis6991/gitsigns.nvim",
+    event = { "BufReadPre", "BufNewFile" },
+    opts = {},
+    config = function(_, opts)
+      require("gitsigns").setup(opts)
+      require("scrollbar.handlers.gitsigns").setup()
+    end,
+  },
+  {
+    "petertriho/nvim-scrollbar",
+    dependencies = { "lewis6991/gitsigns.nvim" },
+    opts = {},
+    config = function(_, opts) require("scrollbar").setup(opts) end,
   },
 }
