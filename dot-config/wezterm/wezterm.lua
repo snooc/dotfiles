@@ -44,7 +44,6 @@ config.use_fancy_tab_bar = false
 config.tab_bar_at_bottom = true
 
 local act = wezterm.action
-config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 1000 }
 config.keys = {
 	{
 		key = "d",
