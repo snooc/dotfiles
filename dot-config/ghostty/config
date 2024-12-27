@@ -1,8 +1,9 @@
-theme = tokyonight-storm
+theme = /Users/cody/.local/share/nvim/lazy/tokyonight.nvim/extras/ghostty/tokyonight_moon
 
 window-theme = system
 
-font-size = 14
+font-family = JetBrainsMono Nerd Font Mono
+font-size = 15
 
 window-padding-color = background
 window-padding-x = 5
@@ -12,4 +13,11 @@ window-height = 40
 window-inherit-font-size = false
 
 macos-option-as-alt = true
-macos-titlebar-style = tabs
+macos-titlebar-style = transparent
+macos-titlebar-proxy-icon = visible
+
+quick-terminal-position = top
+quick-terminal-screen = mouse
+quick-terminal-animation-duration = 0
+
+keybind = global:super+`=toggle_quick_terminal

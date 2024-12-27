@@ -95,13 +95,30 @@ end
 local augroup = vim.api.nvim_create_augroup("CustomSettings", {})
 vim.api.nvim_create_autocmd("FileType", {
   group = augroup,
+  pattern = { "go" },
   callback = function()
-    -- Don"t auto-wrap comments and don"t insert comment leader after hitting "o"
-    -- If don"t do this on `FileType`, this keeps reappearing due to being set in
-    -- filetype plugins.
-    vim.cmd("setlocal formatoptions-=c formatoptions-=o")
+    vim.opt_local.shiftwidth = 4
+    vim.opt_local.tabstop = 4
+    vim.opt_local.expandtab = false
   end,
-  desc = [[Ensure proper "formatoptions"]],
+})
+vim.api.nvim_create_autocmd("FileType", {
+  group = augroup,
+  pattern = { "lua" },
+  callback = function()
+    vim.opt_local.shiftwidth = 2
+    vim.opt_local.tabstop = 2
+    vim.opt_local.expandtab = true
+  end,
+})
+vim.api.nvim_create_autocmd("FileType", {
+  group = augroup,
+  pattern = { "markdown" },
+  callback = function()
+    vim.opt_local.shiftwidth = 2
+    vim.opt_local.tabstop = 2
+    vim.opt_local.expandtab = true
+  end,
 })
 
 vim.keymap.set("n", "<leader>q", vim.cmd.quitall, { silent = true })
