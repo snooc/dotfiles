@@ -27,7 +27,7 @@ format = "[[($conflicted$untracked$modified$staged$renamed$deleted)](218)($ahead
 style = "green"
 
 [git_state]
-format = '\([$state( $progress_current/$progress_total)]($style)\) '
+format = '\([$state($progress_current/$progress_total)]($style)\)'
 style = "purple"
 
 [cmd_duration]
