@@ -35,10 +35,11 @@ function cdc() {
 }
 
 export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
-  --highlight-line \
   --info=inline-right \
   --ansi \
-  --border=none
+  --border \
+  --margin=1 \
+  --padding=1 \
   --color=bg+:#2e3c64 \
   --color=bg:#1f2335 \
   --color=border:#29a4bd \
