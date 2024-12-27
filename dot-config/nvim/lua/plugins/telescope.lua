@@ -3,7 +3,12 @@ return {
     "ibhagwan/fzf-lua",
     cmd = "FzfLua",
     dependencies = { "nvim-tree/nvim-web-devicons" },
-    opts = {},
+    opts = {
+      fzf_opts = {
+        ["--margin"] = 0,
+        ["--padding"] = 0,
+      },
+    },
     config = function(_, opts) require("fzf-lua").setup(opts) end,
     keys = {
       { "<leader><space>", "<cmd>FzfLua files<cr>", desc = "Find Files" },
