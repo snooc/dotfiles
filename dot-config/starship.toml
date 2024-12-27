@@ -20,19 +20,19 @@ vimcmd_symbol = "[❮](green)"
 
 [git_branch]
 format = "[$branch(:$remote_branch)]($style)"
-style = "purple"
+style = "bright-black"
 
 [git_status]
-format = "[[($conflicted$untracked$modified$staged$renamed$deleted)](218)($ahead_behind$stashed)]($style)"
-style = "green"
+format = "[[($conflicted$untracked$modified$staged$renamed$deleted)](white)($ahead_behind$stashed)]($style) "
+style = "blue"
 
 [git_state]
-format = '\([$state($progress_current/$progress_total)]($style)\)'
+format = '\([$state($progress_current/$progress_total)]($style)\) '
 style = "purple"
 
 [cmd_duration]
 format = "[$duration]($style) "
-style = "yellow"
+style = "yellow bold"
 
 [python]
 format = "[$virtualenv]($style) "
