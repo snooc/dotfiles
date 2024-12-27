@@ -4,10 +4,11 @@ vim.g.mapleader = " "
 -- General ====================================================================
 vim.opt.backup = false -- Don"t store backup
 vim.opt.mouse = "a" -- Enable mouse
--- vim.opt.mousescroll  = "ver:25,hor:6" -- Customize mouse scroll
 vim.opt.switchbuf = "usetab" -- Use already opened buffers when switching
 vim.opt.writebackup = false -- Don"t store backup
 vim.opt.undofile = true -- Enable persistent undo
+vim.opt.title = true
+vim.opt.titlestring = "%f [nvim]"
 
 vim.opt.shada = "'100,<50,s10,:1000,/100,@100,h" -- Limit what is stored in ShaDa file
 
