@@ -47,20 +47,16 @@ return {
   },
 
   {
-    "akinsho/bufferline.nvim",
+    "utilyre/barbecue.nvim",
+    name = "barbecue",
     version = "*",
     dependencies = {
-      "nvim-tree/nvim-web-devicons",
+      "SmiteshP/nvim-navic",
+      "nvim-tree/nvim-web-devicons", -- optional dependency
     },
     opts = {
-      options = {
-        offsets = { { filetype = "NvimTree", text = "EXPLORER", text_align = "center" } },
-      },
+      theme = "tokyonight",
     },
-    config = function(_, opts)
-      -- opts.highlights = require("rose-pine.plugins.bufferline")
-      require("bufferline").setup(opts)
-    end,
   },
 
   {

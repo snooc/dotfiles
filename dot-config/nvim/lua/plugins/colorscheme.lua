@@ -6,6 +6,7 @@ return {
     opts = {
       style = "moon",
       light_style = "day",
+      transparent = true,
     },
     config = function(_, opts)
       require("tokyonight").setup(opts)
