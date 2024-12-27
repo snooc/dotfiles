@@ -137,7 +137,7 @@ return {
             cmd = "git status --short --branch --renames",
             height = 5,
             padding = 1,
-            ttl = 5 * 60,
+            ttl = 10,
             indent = 3,
           },
           { section = "startup" },
