@@ -21,4 +21,5 @@ require("lazy").setup({
   dev = {
     path = "~/Code",
   },
+  ui = { border = "rounded" },
 })

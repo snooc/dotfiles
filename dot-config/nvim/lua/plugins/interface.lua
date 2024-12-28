@@ -195,15 +195,6 @@ return {
     "lewis6991/gitsigns.nvim",
     event = { "BufReadPre", "BufNewFile" },
     opts = {},
-    config = function(_, opts)
-      require("gitsigns").setup(opts)
-      require("scrollbar.handlers.gitsigns").setup()
-    end,
-  },
-  {
-    "petertriho/nvim-scrollbar",
-    dependencies = { "lewis6991/gitsigns.nvim" },
-    opts = {},
-    config = function(_, opts) require("scrollbar").setup(opts) end,
+    config = function(_, opts) require("gitsigns").setup(opts) end,
   },
 }
