@@ -18,9 +18,3 @@ macos-titlebar-proxy-icon = visible
 quick-terminal-position = top
 quick-terminal-screen = mouse
 quick-terminal-animation-duration = 0
-
-keybind = global:super+`=toggle_quick_terminal
-keybind = unconsumed:ctrl+h=goto_split:left
-keybind = unconsumed:ctrl+j=goto_split:bottom
-keybind = unconsumed:ctrl+k=goto_split:top
-keybind = unconsumed:ctrl+l=goto_split:right
