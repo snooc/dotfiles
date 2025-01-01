@@ -3,7 +3,7 @@ theme = /Users/cody/.local/share/nvim/lazy/tokyonight.nvim/extras/ghostty/tokyon
 window-theme = system
 
 font-family = JetBrainsMono Nerd Font Mono
-font-size = 15
+font-size = 14
 
 window-padding-color = background
 window-padding-x = 4
@@ -18,3 +18,8 @@ macos-titlebar-proxy-icon = visible
 quick-terminal-position = top
 quick-terminal-screen = mouse
 quick-terminal-animation-duration = 0
+
+keybind = super+alt+h=goto_split:left
+keybind = super+alt+j=goto_split:bottom
+keybind = super+alt+k=goto_split:top
+keybind = super+alt+l=goto_split:right
