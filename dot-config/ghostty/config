@@ -1,4 +1,4 @@
-theme = /Users/cody/.local/share/nvim/lazy/tokyonight.nvim/extras/ghostty/tokyonight_moon
+theme = tokyonight-storm
 
 window-theme = system
 
