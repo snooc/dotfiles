@@ -1,4 +1,5 @@
 format = """
+$shell\
 $username\
 $hostname\
 $directory\
@@ -37,3 +38,8 @@ style = "yellow bold"
 [python]
 format = "[$virtualenv]($style) "
 style = "bright-black"
+
+[shell]
+format = '[\[$indicator\]]($style) '
+style = "green bold"
+disabled = false
