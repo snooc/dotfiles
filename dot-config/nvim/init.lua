@@ -9,43 +9,65 @@ if not vim.loop.fs_stat(mini_path) then
   vim.cmd('echo "Installed `mini.nvim`" | redraw')
 end
 
--- Set up 'mini.deps' (customize to your liking)
 require('mini.deps').setup({ path = { package = path_package } })
-
--- Use 'mini.deps'. `now()` and `later()` are helpers for a safe two-stage
--- startup and are optional.
 local add, now, later = MiniDeps.add, MiniDeps.now, MiniDeps.later
 
--- Plugins
-now(function() require('mini.basics').setup({
-  options = {
-    extra_ui = true,
-  },
-  mappings = {
-    basic = true,
-    windows = true,
-  },
-  autocommands = {
-    basic = true,
-    relnum_in_visual_mode = true,
-  }
-}) end)
+-- Mini
+now(function() add("echasnovski/mini.nvim") end)
 now(function()
+  require('mini.basics').setup({
+    options = {
+      extra_ui = true,
+    },
+    mappings = {
+      basic = true,
+      windows = true,
+    },
+    autocommands = {
+      basic = true,
+      relnum_in_visual_mode = true,
+    }
+  })
   vim.cmd([[colorscheme snooc]])
-end)
-now(function()
+
   require('mini.notify').setup()
   vim.notify = require('mini.notify').make_notify()
-end)
-now(function() require('mini.icons').setup() end)
-now(function() require('mini.tabline').setup() end)
-now(function() require('mini.statusline').setup() end)
 
-later(function() require("mini.pick").setup() end)
-later(function() require("mini.extra").setup() end)
-later(function() require("mini.git").setup() end)
+  require('mini.icons').setup()
+  require('mini.tabline').setup()
+  require('mini.statusline').setup()
+end)
 later(function()
-  mf = require('mini.files')
-  mf.setup()
-  vim.keymap.set('n', '-', function() mf.open() end)
+  require("mini.pick").setup()
+  require("mini.extra").setup()
+  require("mini.git").setup()
+  require('mini.files').setup()
+
+  vim.keymap.set('n', '-', function()
+    local mf = require("mini.files")
+    if not mf.close() then mf.open() end
+  end)
+end)
+
+-- Completion, LSP, Conform
+later(function()
+  -- Mason - Package manager for LSP, Linters, Formaters, etc
+  add({ source = "williamboman/mason.nvim" })
+  require("mason").setup({
+    ui = {
+      border = "single"
+    }
+  })
+end)
+
+later(function()
+  -- Blink - Completion
+  add({
+    source = "saghen/blink.cmp",
+    depends = {
+      "rafamadriz/friendly-snippets",
+    },
+    checkout = "v0.9.2",
+  })
+  require("blink.cmp").setup({})
 end)
