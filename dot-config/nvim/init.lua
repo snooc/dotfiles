@@ -69,5 +69,9 @@ later(function()
     },
     checkout = "v0.9.2",
   })
-  require("blink.cmp").setup({})
+  require("blink.cmp").setup({
+    keymap = {
+      preset = "super-tab"
+    }
+  })
 end)
