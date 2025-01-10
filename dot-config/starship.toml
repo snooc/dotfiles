@@ -1,5 +1,6 @@
 format = """
 $shell\
+$aws\
 $username\
 $hostname\
 $directory\
@@ -38,3 +39,6 @@ style = "yellow bold"
 format = '[\[$indicator\]]($style) '
 style = "green bold"
 disabled = false
+
+[aws]
+format = '[($profile)(\($region\) )]($style)'
