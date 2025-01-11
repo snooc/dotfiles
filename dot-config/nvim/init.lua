@@ -36,16 +36,24 @@ now(function()
   vim.notify = require("mini.notify").make_notify()
 
   require("mini.icons").setup()
-  require("mini.tabline").setup()
   require("mini.statusline").setup()
 end)
+now(function()
+  add("Bekaboo/dropbar.nvim")
+
+  local dropbar_api = require("dropbar.api")
+  vim.keymap.set("n", "<Leader>;", dropbar_api.pick, { desc = "Pick symbols in winbar" })
+  vim.keymap.set("n", "[;", dropbar_api.goto_context_start, { desc = "Go to start of current context" })
+  vim.keymap.set("n", "];", dropbar_api.select_next_context, { desc = "Select next context" })
+end)
+
 later(function()
   require("mini.pick").setup()
   require("mini.extra").setup()
   require("mini.git").setup()
-  require("mini.files").setup()
   require("mini.indentscope").setup()
 
+  require("mini.files").setup()
   vim.keymap.set("n", "-", function()
     local mf = require("mini.files")
     if not mf.close() then mf.open() end
