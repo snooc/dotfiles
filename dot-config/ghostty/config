@@ -1,8 +1,11 @@
-theme = tokyonight-storm
+theme = rose-pine-moon
 
 window-theme = system
 
-font-family = JetBrainsMono Nerd Font Mono
+font-family = Monaspace Neon Var Regular Light
+font-family-bold = Monaspace Neon Var Regular Bold
+font-family-italic = Monaspace Neon Var Regular Light Italic
+font-family-bold-italic = Monaspace Neon Var Regular Bold Italic
 font-size = 14
 
 window-padding-color = background
