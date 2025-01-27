@@ -1,4 +1,4 @@
-theme = rose-pine-moon
+theme = dark:rose-pine-moon,light:rose-pine-dawn
 
 window-theme = system
 
@@ -21,3 +21,5 @@ macos-titlebar-proxy-icon = visible
 quick-terminal-position = top
 quick-terminal-screen = mouse
 quick-terminal-animation-duration = 0
+
+keybind = global:super+escape=toggle_quick_terminal
