@@ -2,7 +2,7 @@ theme = "tokyonight_storm"
 
 window-theme = system
 
-font-size = 12
+font-size = 14
 
 window-padding-color = background
 window-padding-x = 4
