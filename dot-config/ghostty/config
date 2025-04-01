@@ -1,4 +1,4 @@
-theme = "tokyonight_storm"
+theme = dark:catppuccin-frappe,light:catppuccin-latte
 
 window-theme = system
 
