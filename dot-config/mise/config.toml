@@ -1,9 +1,19 @@
 [tools]
-node = "latest"
-python = "3.12"
-go = "1.22"
+go = "1.24"
 lua = "5.4"
+node = "latest"
 postgres = "latest"
-action-validator = "0.6.0"
-hugo = "0.129"
-goreleaser = "latest"
+python = "3.12"
+
+# go pkgs
+gopls  = "latest"
+
+[alias]
+gopls = "go:golang.org/x/tools/gopls"
+
+[settings]
+experimental = true
+
+trusted_config_paths = [
+  "~/Code",
+]
