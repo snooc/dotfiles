@@ -5,9 +5,12 @@ node = "latest"
 postgres = "latest"
 python = "3.12"
 
-# go pkgs
+# go tools 
 gopls  = "latest"
 dlv = "latest"
+
+# lua tools
+"ubi:luals/lua-language-server" = { version = "latest", extract_all = true, bin_path = "bin" }
 
 [alias]
 gopls = "go:golang.org/x/tools/gopls"
