@@ -7,9 +7,11 @@ python = "3.12"
 
 # go pkgs
 gopls  = "latest"
+dlv = "latest"
 
 [alias]
 gopls = "go:golang.org/x/tools/gopls"
+dlv = "go:github.com/go-delve/delve/cmd/dlv"
 
 [settings]
 experimental = true
