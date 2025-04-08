@@ -12,6 +12,9 @@ dlv = "latest"
 # lua tools
 "ubi:luals/lua-language-server" = { version = "latest", extract_all = true, bin_path = "bin" }
 
+# python tools
+"pipx:pyright" = "latest"
+
 [alias]
 gopls = "go:golang.org/x/tools/gopls"
 dlv = "go:github.com/go-delve/delve/cmd/dlv"
