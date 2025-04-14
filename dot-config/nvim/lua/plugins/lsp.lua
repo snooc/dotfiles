@@ -1,6 +1,6 @@
 return {
   {
-    "TheRealLorenz/nvim-lspconfig",
+    "neovim/nvim-lspconfig",
     lazy = false,
     config = function()
       vim.api.nvim_create_autocmd('LspAttach', {
