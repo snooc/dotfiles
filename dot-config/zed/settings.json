@@ -22,9 +22,12 @@
     "metrics": false
   },
   "vim_mode": true,
-  "ui_font_family": "JetBrainsMono Nerd Font",
+  "vim": {
+    "toggle_relative_line_numbers": true
+  },
+  "ui_font_family": "JetBrainsMonoNL Nerd Font",
   "ui_font_size": 12,
-  "buffer_font_family": "JetBrainsMono Nerd Font",
+  "buffer_font_family": "JetBrainsMonoNL Nerd Font",
   "buffer_font_size": 12,
   "theme": {
     "mode": "system",
@@ -32,7 +35,14 @@
     "dark": "One Dark"
   },
   "terminal": {
-    "font_family": "JetBrainsMono Nerd Font",
+    "font_family": "JetBrainsMonoNL Nerd Font",
     "font_size": 12
+  },
+  "file_types": {
+    "Helm": [
+      "**/templates/**/*.tpl",
+      "**/templates/**/*.yaml",
+      "**/templates/**/*.yml"
+    ]
   }
 }

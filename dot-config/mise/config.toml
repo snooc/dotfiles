@@ -14,6 +14,7 @@ dlv = "latest"
 
 # python tools
 "pipx:pyright" = "latest"
+dagger = "0.12.2"
 
 [alias]
 gopls = "go:golang.org/x/tools/gopls"
