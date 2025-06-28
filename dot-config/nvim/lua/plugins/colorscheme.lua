@@ -6,7 +6,16 @@ return {
     priority = 1000,
     opts = {},
     config = function(opts)
-      vim.cmd([[colorscheme catppuccin]])
+      -- vim.cmd([[colorscheme catppuccin]])
     end,
   },
+  {
+    "rebelot/kanagawa.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+    config = function(opts)
+      vim.cmd([[colorscheme kanagawa]])
+    end,
+  }
 }

@@ -1,4 +1,4 @@
-theme = catppuccin-frappe
+theme = dark:kanagawa-wave,light:kanagawa-lotus
 
 window-theme = system
 
