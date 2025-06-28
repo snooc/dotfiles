@@ -1,4 +1,4 @@
-theme = dark:catppuccin-frappe,light:catppuccin-latte
+theme = catppuccin-frappe
 
 window-theme = system
 
@@ -19,3 +19,4 @@ quick-terminal-screen = mouse
 quick-terminal-animation-duration = 0
 
 keybind = global:super+escape=toggle_quick_terminal
+keybind = shift+enter=text:\n

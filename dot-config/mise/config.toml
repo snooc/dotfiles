@@ -1,24 +1,20 @@
 [tools]
 go = "1.24"
-lua = "5.4"
 node = "latest"
-postgres = "latest"
-python = "3.12"
+python = "3.13"
 
 # go tools 
-gopls  = "latest"
-dlv = "latest"
+"go:golang.org/x/tools/gopls" = "latest"
+"go:github.com/go-delve/delve/cmd/dlv" = "latest"
 
 # lua tools
 "ubi:luals/lua-language-server" = { version = "latest", extract_all = true, bin_path = "bin" }
 
-# python tools
-"pipx:pyright" = "latest"
-dagger = "0.12.2"
+# node tools
+"npm:@anthropic-ai/claude-code" = "latest"
 
-[alias]
-gopls = "go:golang.org/x/tools/gopls"
-dlv = "go:github.com/go-delve/delve/cmd/dlv"
+# python tools
+"ubi:astral-sh/uv" = "latest"
 
 [settings]
 experimental = true
@@ -26,3 +22,4 @@ experimental = true
 trusted_config_paths = [
   "~/Code",
 ]
+idiomatic_version_file_enable_tools = ["node"]
