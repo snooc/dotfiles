@@ -15,7 +15,17 @@ return {
     priority = 1000,
     opts = {},
     config = function(opts)
-      vim.cmd([[colorscheme kanagawa]])
+      -- vim.cmd([[colorscheme kanagawa]])
     end,
-  }
+  },
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {
+    },
+    config = function(opts)
+      vim.cmd([[colorscheme tokyonight]])
+    end,
+  },
 }

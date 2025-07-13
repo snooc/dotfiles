@@ -7,15 +7,18 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "icon_theme": "Material Icon Theme",
+  "ui_font_size": 15,
+  "buffer_font_size": 12,
   "auto_update_extensions": {
     "helm": false
   },
-  "assistant": {
-    "default_profile": "ask",
+  "agent": {
+    "default_profile": "write",
     "always_allow_tool_actions": true,
     "default_model": {
       "provider": "copilot_chat",
-      "model": "claude-3.7-sonnet"
+      "model": "gpt-4.1"
     },
     "version": "2"
   },
@@ -26,8 +29,10 @@
   "vim": {
     "toggle_relative_line_numbers": true
   },
-  "theme": "One Dark",
-  "terminal": {},
+  "theme": "Tokyo Night Storm",
+  "terminal": {
+    "font_size": 12
+  },
   "file_types": {
     "Helm": [
       "**/templates/**/*.tpl",
