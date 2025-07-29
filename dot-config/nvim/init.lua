@@ -17,13 +17,16 @@ require('mini.deps').setup({ path = { package = path_package } })
 local add, now, later = MiniDeps.add, MiniDeps.now, MiniDeps.later
 
 now(function()
+  add({ source = "scottmckendry/cyberdream.nvim" })
   add({ source = "stevearc/oil.nvim" })
   add({ source = "neovim/nvim-lspconfig" })
 end)
 
 now(function()
-  require("mini.basics").setup({
-  })
+  require("cyberdream").setup({})
+  require("mini.basics").setup({})
+
+  vim.cmd([[colorscheme cyberdream]])
 end)
 
 later(function()
