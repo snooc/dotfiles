@@ -24,7 +24,60 @@ end)
 
 now(function()
   require("cyberdream").setup({})
-  require("mini.basics").setup({})
+  require("mini.basics").setup({
+    options = {
+      extra_ui = true,
+    },
+  })
+  require("mini.notify").setup({})
+  require("mini.git").setup({})
+  require("mini.diff").setup({})
+  require("mini.statusline").setup({})
+
+  local miniclue = require("mini.clue")
+  miniclue.setup({
+    triggers = {
+      -- Leader triggers
+      { mode = 'n', keys = '<Leader>' },
+      { mode = 'x', keys = '<Leader>' },
+
+      -- Built-in completion
+      { mode = 'i', keys = '<C-x>' },
+
+      -- `g` key
+      { mode = 'n', keys = 'g' },
+      { mode = 'x', keys = 'g' },
+
+      -- Marks
+      { mode = 'n', keys = "'" },
+      { mode = 'n', keys = '`' },
+      { mode = 'x', keys = "'" },
+      { mode = 'x', keys = '`' },
+
+      -- Registers
+      { mode = 'n', keys = '"' },
+      { mode = 'x', keys = '"' },
+      { mode = 'i', keys = '<C-r>' },
+      { mode = 'c', keys = '<C-r>' },
+
+      -- Window commands
+      { mode = 'n', keys = '<C-w>' },
+
+      -- `z` key
+      { mode = 'n', keys = 'z' },
+      { mode = 'x', keys = 'z' },
+    },
+
+    clues = {
+      -- Enhance this by adding descriptions for <Leader> mapping groups
+      miniclue.gen_clues.builtin_completion(),
+      miniclue.gen_clues.g(),
+      miniclue.gen_clues.marks(),
+      miniclue.gen_clues.registers(),
+      miniclue.gen_clues.windows(),
+      miniclue.gen_clues.z(),
+    },
+  })
 
   vim.cmd([[colorscheme cyberdream]])
 end)
@@ -32,6 +85,29 @@ end)
 later(function()
   require("oil").setup({})
   vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+
+  require("mini.extra").setup({})
+
+  local MiniPick = require("mini.pick")
+  local win_config = function()
+    local height = math.floor(0.618 * vim.o.lines)
+    local width = math.floor(0.618 * vim.o.columns)
+    return {
+      anchor = 'NW',
+      height = height,
+      width = width,
+      row = math.floor(0.5 * (vim.o.lines - height)),
+      col = math.floor(0.5 * (vim.o.columns - width)),
+    }
+  end
+  MiniPick.setup({
+    window = {
+      config = win_config
+    },
+  })
+
+  vim.keymap.set("n", "<leader><space>", function() MiniPick.builtin.files({}) end, { desc = "File Explorer" })
+  vim.keymap.set("n", "<leader>/", function() MiniPick.builtin.grep_live({}) end, { desc = "File Explorer" })
 end)
 
 later(function()
@@ -118,5 +194,7 @@ later(function()
       }
     }
   })
+
   vim.lsp.enable("lua_ls")
+  vim.lsp.enable("gopls")
 end)
