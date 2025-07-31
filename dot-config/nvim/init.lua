@@ -12,7 +12,8 @@ if not vim.loop.fs_stat(mini_path) then
   vim.cmd('echo "Installed `mini.nvim`" | redraw')
 end
 
-require('mini.deps').setup({ path = { package = path_package } })
+local MiniDeps = require("mini.deps")
+MiniDeps.setup({ path = { package = path_package } })
 
 local add, now, later = MiniDeps.add, MiniDeps.now, MiniDeps.later
 
@@ -86,7 +87,8 @@ later(function()
   require("oil").setup({})
   vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
-  require("mini.extra").setup({})
+  local MiniExtra = require("mini.extra")
+  MiniExtra.setup({})
 
   local MiniPick = require("mini.pick")
   local win_config = function()
@@ -106,8 +108,10 @@ later(function()
     },
   })
 
-  vim.keymap.set("n", "<leader><space>", function() MiniPick.builtin.files({}) end, { desc = "File Explorer" })
-  vim.keymap.set("n", "<leader>/", function() MiniPick.builtin.grep_live({}) end, { desc = "File Explorer" })
+  vim.keymap.set("n", "<leader><space>", function() MiniPick.builtin.files({}) end, { desc = "Fuzzy Find Files" })
+  vim.keymap.set("n", "<leader>/", function() MiniPick.builtin.grep_live({}) end, { desc = "Grep Files" })
+  vim.keymap.set("n", "<leader>e", function() MiniExtra.pickers.explorer({}) end, { desc = "File Explorer" })
+  vim.keymap.set("n", "<leader>d", function() MiniExtra.pickers.diagnostic({}) end, { desc = "Diagnostics" })
 end)
 
 later(function()
