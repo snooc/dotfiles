@@ -24,7 +24,10 @@ now(function()
 end)
 
 now(function()
-  require("cyberdream").setup({})
+  require("cyberdream").setup({
+    variant = "auto",
+    transparent = true,
+  })
   require("mini.basics").setup({
     options = {
       extra_ui = true,
@@ -84,7 +87,9 @@ now(function()
 end)
 
 later(function()
-  require("oil").setup({})
+  require("oil").setup({
+    default_file_explorer = true,
+  })
   vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
   local MiniExtra = require("mini.extra")

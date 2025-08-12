@@ -2,6 +2,9 @@ theme = dark:cyberdream,light:cyberdream-light
 
 window-theme = system
 
+background-opacity = 0.9
+background-blur = true
+
 font-size = 14
 
 unfocused-split-opacity = 1

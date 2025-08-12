@@ -1,7 +1,6 @@
 [tools]
 go = "1.24"
 node = "latest"
-python = "3.13"
 
 "ubi:neovim/neovim" = { version = "latest", extract_all = true, bin_path = "bin" }
 
@@ -17,6 +16,8 @@ python = "3.13"
 
 # python tools
 "ubi:astral-sh/uv" = "latest"
+uv = "latest"
+action-validator = "latest"
 
 [settings]
 experimental = true
