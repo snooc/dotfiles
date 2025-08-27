@@ -1,4 +1,4 @@
-theme = dark:cyberdream,light:cyberdream-light
+theme = dark:catppuccin-frappe,light:catppuccin-latte
 
 window-theme = system
 
@@ -23,5 +23,5 @@ quick-terminal-position = top
 quick-terminal-screen = mouse
 quick-terminal-animation-duration = 0
 
-keybind = global:super+escape=toggle_quick_terminal
-keybind = shift+enter=text:\n
+# keybind = global:super+escape=toggle_quick_terminal
+# keybind = shift+enter=text:\n

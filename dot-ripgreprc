@@ -1,0 +1,21 @@
+# Search hidden files and directories
+--hidden
+
+# Use smart case (case insensitive unless uppercase present)
+--smart-case
+
+# Exclude common large/unimportant directories
+--glob=!.git/
+--glob=!node_modules/
+--glob=!.npm/
+--glob=!.yarn/
+--glob=!__pycache__/
+--glob=!*.pyc
+--glob=!.pytest_cache/
+--glob=!.mypy_cache/
+--glob=!.tox/
+--glob=!venv/
+--glob=!.venv/
+--glob=!env/
+--glob=!.env/
+--glob=!.DS_Store

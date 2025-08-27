@@ -6,6 +6,9 @@ eval "$(starship init zsh)"
 # Editor
 export EDITOR="nvim"
 
+# RipGrep
+export RIPGREP_CONFIG_PATH="${HOME}/.ripgreprc"
+
 # Homebrew auto-complete
 if type brew &>/dev/null
 then
@@ -27,6 +30,7 @@ alias lg="lazygit"
 alias ld="lazydocker"
 alias fudns='sudo dscacheutil -flushcache; sleep 2; sudo killall -HUP mDNSResponder;'
 alias vim="vim"
+alias c="NODE_TLS_REJECT_UNAUTHORIZED=0 claude"
 
 setopt completealiases
 function cdc() {

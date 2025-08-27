@@ -19,6 +19,8 @@ local add, now, later = MiniDeps.add, MiniDeps.now, MiniDeps.later
 
 now(function()
   add({ source = "scottmckendry/cyberdream.nvim" })
+  add({ source = "rebelot/kanagawa.nvim" })
+  add({ source = "catppuccin/nvim", name = "catppuccin" })
   add({ source = "stevearc/oil.nvim" })
   add({ source = "neovim/nvim-lspconfig" })
 end)
@@ -27,6 +29,15 @@ now(function()
   require("cyberdream").setup({
     variant = "auto",
     transparent = true,
+  })
+  require("kanagawa").setup({
+  })
+  require("catppuccin").setup({
+    background = {
+      light = "latte",
+      dark = "frappe",
+    },
+    transparent_background = true,
   })
   require("mini.basics").setup({
     options = {
@@ -83,7 +94,8 @@ now(function()
     },
   })
 
-  vim.cmd([[colorscheme cyberdream]])
+  -- vim.cmd([[colorscheme cyberdream]])
+  vim.cmd([[colorscheme catppuccin]])
 end)
 
 later(function()

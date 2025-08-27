@@ -13,6 +13,7 @@ node = "latest"
 
 # node tools
 "npm:@anthropic-ai/claude-code" = "latest"
+"npm:@google/gemini-cli" = "latest"
 
 # python tools
 "ubi:astral-sh/uv" = "latest"
