@@ -38,3 +38,8 @@ function cdc() {
 }
 
 source <(fzf --zsh)
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/cody/.lmstudio/bin"
+# End of LM Studio CLI section
+
