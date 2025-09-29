@@ -1,3 +1,6 @@
+# No filename headings
+--no-heading
+
 # Search hidden files and directories
 --hidden
 
