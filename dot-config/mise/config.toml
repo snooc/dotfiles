@@ -21,6 +21,8 @@ node = "latest"
 uv = "latest"
 action-validator = "latest"
 
+"ubi:jesseduffield/lazygit" = "latest"
+
 [settings]
 experimental = true
 
