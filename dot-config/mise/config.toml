@@ -22,6 +22,9 @@ uv = "latest"
 action-validator = "latest"
 
 "ubi:jesseduffield/lazygit" = "latest"
+"ubi:alexpasmantier/television" = { version = "latest", exe = "tv" }
+"ubi:sharkdp/fd" = "latest"
+"ubi:sharkdp/bat" = "latest"
 
 [settings]
 experimental = true
