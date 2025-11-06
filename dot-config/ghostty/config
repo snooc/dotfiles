@@ -16,7 +16,7 @@ window-height = 40
 window-inherit-font-size = false
 
 macos-option-as-alt = true
-macos-titlebar-style = transparent
+macos-titlebar-style = tabs
 macos-titlebar-proxy-icon = visible
 
 quick-terminal-position = top
