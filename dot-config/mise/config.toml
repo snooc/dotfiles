@@ -25,6 +25,7 @@ action-validator = "latest"
 "ubi:alexpasmantier/television" = { version = "latest", exe = "tv" }
 "ubi:sharkdp/fd" = "latest"
 "ubi:sharkdp/bat" = "latest"
+"ubi:cli/cli" = { version = "latest", exe = "gh" }
 
 [settings]
 experimental = true
