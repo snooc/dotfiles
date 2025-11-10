@@ -39,7 +39,7 @@
     "light": "Catppuccin Latte"
   },
   "terminal": {
-    "font_size": 12
+    "font_size": 14
   },
   "file_types": {
     "Helm": [
