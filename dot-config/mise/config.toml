@@ -27,6 +27,7 @@ action-validator = "latest"
 "ubi:sharkdp/bat" = "latest"
 "ubi:cli/cli" = { version = "latest", exe = "gh" }
 "ubi:nektos/act" = "latest"
+"ubi:ducaale/xh" = "latest"
 
 [settings]
 experimental = true
