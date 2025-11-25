@@ -12,7 +12,7 @@
   },
   "icon_theme": {
     "mode": "system",
-    "dark": "Catppuccin Macchiato",
+    "dark": "Colored Zed Icons Theme Dark",
     "light": "Catppuccin Latte"
   },
   "ui_font_size": 15,
@@ -38,7 +38,7 @@
   },
   "theme": {
     "mode": "system",
-    "dark": "One Dark Pro",
+    "dark": "Snazzy Theme - blurred",
     "light": "Catppuccin Latte"
   },
   "terminal": {
