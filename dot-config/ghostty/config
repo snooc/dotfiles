@@ -22,6 +22,4 @@ macos-titlebar-proxy-icon = visible
 quick-terminal-position = top
 quick-terminal-screen = mouse
 quick-terminal-animation-duration = 0
-
-# keybind = global:super+escape=toggle_quick_terminal
-# keybind = shift+enter=text:\n
+keybind = shift+enter=text:\x1b\r

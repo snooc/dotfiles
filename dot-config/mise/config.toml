@@ -28,7 +28,7 @@ action-validator = "latest"
 "ubi:cli/cli" = { version = "latest", exe = "gh" }
 "ubi:nektos/act" = "latest"
 "ubi:ducaale/xh" = "latest"
-"ubi:Wilfred/difftastic" = { version = "latest", extract_all = true, exec = "difft"  }
+"ubi:dandavison/delta" = "latest"
 
 [settings]
 experimental = true
