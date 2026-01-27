@@ -28,7 +28,6 @@ action-validator = "latest"
 "ubi:cli/cli" = { version = "latest", exe = "gh" }
 "ubi:nektos/act" = "latest"
 "ubi:ducaale/xh" = "latest"
-"ubi:dandavison/delta" = "latest"
 
 [settings]
 experimental = true
