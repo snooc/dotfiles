@@ -23,6 +23,7 @@ now(function()
   add({ source = "catppuccin/nvim", name = "catppuccin" })
   add({ source = "stevearc/oil.nvim" })
   add({ source = "neovim/nvim-lspconfig" })
+  add({ source = "lewis6991/gitsigns.nvim" })
 end)
 
 now(function()
@@ -39,6 +40,7 @@ now(function()
     },
     transparent_background = true,
   })
+  require("gitsigns").setup({})
   require("mini.basics").setup({
     options = {
       extra_ui = true,
@@ -129,6 +131,21 @@ later(function()
   vim.keymap.set("n", "<leader>/", function() MiniPick.builtin.grep_live({}) end, { desc = "Grep Files" })
   vim.keymap.set("n", "<leader>e", function() MiniExtra.pickers.explorer({}) end, { desc = "File Explorer" })
   vim.keymap.set("n", "<leader>d", function() MiniExtra.pickers.diagnostic({}) end, { desc = "Diagnostics" })
+
+  local MiniMap = require("mini.map")
+  require("mini.map").setup({
+    integrations = {
+      MiniMap.gen_integration.builtin_search(),
+      MiniMap.gen_integration.diff(),
+      MiniMap.gen_integration.diagnostic(),
+    }
+  })
+  vim.keymap.set("n", "<Leader>mc", function() MiniMap.close() end, { desc = "Close minimap" })
+  vim.keymap.set("n", "<Leader>mf", function() MiniMap.toggle_focus() end, { desc = "Toggle focus for minimap" })
+  vim.keymap.set("n", "<Leader>mo", function() MiniMap.open() end, { desc = "Open minimap" })
+  vim.keymap.set("n", "<Leader>mr", function() MiniMap.refresh() end, { desc = "Refresh minimap" })
+  vim.keymap.set("n", "<Leader>ms", function() MiniMap.toggle_side() end, { desc = "Toggle minimap side (left / right)" })
+  vim.keymap.set("n", "<Leader>mt", function() MiniMap.toggle() end, { desc = "Toggle minimap" })
 end)
 
 later(function()
