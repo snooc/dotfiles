@@ -2,7 +2,7 @@
 go = "1.24"
 node = "latest"
 
-"github:neovim/neovim" = { version = "latest", extract_all = true, bin_path = "bin" }
+"aqua:neovim/neovim" = "latest"
 
 # go tools
 "go:golang.org/x/tools/gopls" = "latest"
