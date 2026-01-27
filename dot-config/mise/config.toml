@@ -2,14 +2,14 @@
 go = "1.24"
 node = "latest"
 
-"ubi:neovim/neovim" = { version = "latest", extract_all = true, bin_path = "bin" }
+"github:neovim/neovim" = { version = "latest", extract_all = true, bin_path = "bin" }
 
 # go tools
 "go:golang.org/x/tools/gopls" = "latest"
 "go:github.com/go-delve/delve/cmd/dlv" = "latest"
 
 # lua tools
-"ubi:luals/lua-language-server" = { version = "latest", extract_all = true, bin_path = "bin" }
+"github:luals/lua-language-server" = { version = "latest", extract_all = true, bin_path = "bin" }
 
 # node tools
 "npm:@anthropic-ai/claude-code" = "latest"
@@ -17,17 +17,15 @@ node = "latest"
 "npm:@openai/codex" = "latest"
 
 # python tools
-"ubi:astral-sh/uv" = "latest"
-uv = "latest"
-action-validator = "latest"
+"github:astral-sh/uv" = "latest"
 
-"ubi:jesseduffield/lazygit" = "latest"
-"ubi:alexpasmantier/television" = { version = "latest", exe = "tv" }
-"ubi:sharkdp/fd" = "latest"
-"ubi:sharkdp/bat" = "latest"
-"ubi:cli/cli" = { version = "latest", exe = "gh" }
-"ubi:nektos/act" = "latest"
-"ubi:ducaale/xh" = "latest"
+"github:jesseduffield/lazygit" = "latest"
+"github:alexpasmantier/television" = { version = "latest", exe = "tv" }
+"github:sharkdp/fd" = "latest"
+"github:sharkdp/bat" = "latest"
+"github:cli/cli" = { version = "latest", exe = "gh" }
+"github:nektos/act" = "latest"
+"github:ducaale/xh" = "latest"
 
 [settings]
 experimental = true
