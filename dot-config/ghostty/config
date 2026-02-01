@@ -1,4 +1,4 @@
-theme = dark:catppuccin-frappe,light:catppuccin-latte
+theme = dark:cyberdream,light:cyberdream-light
 
 window-theme = system
 
@@ -16,8 +16,8 @@ window-height = 40
 window-inherit-font-size = false
 
 macos-option-as-alt = true
-macos-titlebar-style = tabs
-macos-titlebar-proxy-icon = visible
+macos-titlebar-style = transparent
+macos-titlebar-proxy-icon = hidden
 
 quick-terminal-position = top
 quick-terminal-screen = mouse
