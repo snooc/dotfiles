@@ -12,7 +12,6 @@ node = "latest"
 "github:luals/lua-language-server" = { version = "latest", extract_all = true, bin_path = "bin" }
 
 # node tools
-"npm:@anthropic-ai/claude-code" = "latest"
 "npm:@google/gemini-cli" = "latest"
 "npm:@openai/codex" = "latest"
 
