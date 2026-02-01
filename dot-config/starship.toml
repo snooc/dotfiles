@@ -5,6 +5,7 @@ $shell\
 $aws\
 $username\
 $hostname\
+${custom.git_worktree}\
 $directory\
 $git_branch\
 $git_state\
@@ -32,6 +33,18 @@ style = "blue"
 [git_state]
 format = '\([$state($progress_current/$progress_total)]($style)\) '
 style = "purple"
+
+[custom.git_worktree]
+command = '''
+common=$(git rev-parse --git-common-dir 2>/dev/null)
+gitdir=$(git rev-parse --git-dir 2>/dev/null)
+if [ "$common" != "$gitdir" ]; then
+  basename "$(dirname "$common")"
+fi
+'''
+when = '''test "$(git rev-parse --git-common-dir 2>/dev/null)" != "$(git rev-parse --git-dir 2>/dev/null)"'''
+format = "[🌳$output]($style) "
+style = "yellow"
 
 [cmd_duration]
 format = "[$duration]($style) "
