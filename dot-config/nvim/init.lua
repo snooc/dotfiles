@@ -26,6 +26,15 @@ now(function()
 end)
 
 now(function()
+  vim.opt.listchars = {
+    tab = '» ',
+    trail = '·',
+    nbsp = '␣',
+    extends = '…',
+  }
+end)
+
+now(function()
   require("cyberdream").setup({
     variant = "auto",
     transparent = true,
@@ -48,6 +57,8 @@ now(function()
   require("mini.git").setup({})
   require("mini.diff").setup({})
   require("mini.statusline").setup({})
+  require("mini.tabline").setup({})
+  require("mini.indentscope").setup({})
 
   local miniclue = require("mini.clue")
   miniclue.setup({
