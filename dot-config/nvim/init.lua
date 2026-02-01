@@ -60,6 +60,12 @@ now(function()
   require("mini.tabline").setup({})
   require("mini.indentscope").setup({})
 
+  require("oil").setup({
+    default_file_explorer = true,
+  })
+  vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+
+
   local miniclue = require("mini.clue")
   miniclue.setup({
     triggers = {
@@ -110,11 +116,6 @@ now(function()
 end)
 
 later(function()
-  require("oil").setup({
-    default_file_explorer = true,
-  })
-  vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
-
   local MiniExtra = require("mini.extra")
   MiniExtra.setup({})
 
