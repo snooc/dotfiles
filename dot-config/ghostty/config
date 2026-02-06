@@ -1,4 +1,5 @@
 theme = dark:cyberdream,light:cyberdream-light
+split-divider-color = #C0C0C0
 
 window-theme = system
 
